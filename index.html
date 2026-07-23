@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Lincoln Sposito | Perícia Judicial, Finanças & Auditoria Bancária</title>
-    <meta name="description" content="Auditoria de sistemas bancários, perícia em contratos de crédito, FGI PEAC, financiamento de veículos e suporte forense para empresas.">
+    <meta name="description" content="Auditoria de sistemas bancários, perícia em contratos de crédito, FGI PEAC, financiamento de veículos, câmbio e suporte forense cross-border para empresas.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,8 +60,8 @@
         header { background-color: var(--bg-primary); border-bottom: 1px solid rgba(197, 160, 89, 0.2); position: sticky; top: 0; z-index: 1000; padding: 12px 0; }
         .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
         .logo-container img { height: 60px; width: auto; display: block; }
-        nav ul { display: flex; list-style: none; gap: 24px; align-items: center; }
-        nav a { color: var(--text-light); font-size: 0.9rem; font-weight: 500; }
+        nav ul { display: flex; list-style: none; gap: 20px; align-items: center; }
+        nav a { color: var(--text-light); font-size: 0.88rem; font-weight: 500; }
         nav a:hover { color: var(--accent-gold); }
         .lang-selector { display: flex; gap: 8px; font-size: 0.8rem; background: var(--bg-secondary); padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.3); }
         .lang-selector a { color: #94a3b8; font-weight: 600; }
@@ -82,7 +82,7 @@
         .trust-item h3 { font-size: 1.8rem; color: var(--accent-gold); margin-bottom: 4px; font-family: var(--font-body); font-weight: 700; }
         .trust-item p { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; }
 
-        /* --- SELETOR DE SEVERIDADE / NÍVEL DE CRISE --- */
+        /* --- SELETOR DE SEVERIDADE / NÍVEL DE CRISE (NACIONAL - ETAPA 1) --- */
         .severity-section { padding: 90px 0 60px; }
         .section-header { text-align: center; margin-bottom: 50px; }
         .section-header h2 { font-size: 2.2rem; color: var(--bg-primary); margin-bottom: 12px; }
@@ -105,6 +105,13 @@
         .severity-list { list-style: none; margin-bottom: 30px; }
         .severity-list li { font-size: 0.9rem; color: var(--text-dark); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
         .severity-list li i { font-size: 0.8rem; }
+
+        /* --- SEÇÃO MERCADO AMERICANO & CROSS-BORDER (ETAPA 2) --- */
+        .crossborder-section { padding: 80px 0; background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%); color: white; border-top: 2px solid var(--accent-gold); }
+        .crossborder-section .section-header h2 { color: #ffffff; }
+        .crossborder-section .section-header p { color: #94a3b8; }
+        .crossborder-card { background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 12px; padding: 32px 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; }
+        .crossborder-card:hover { border-color: var(--accent-gold); transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 
         /* --- FLUXO DOS 5 PASSOS DE SOLUÇÃO --- */
         .flow-section { padding: 80px 0; background-color: var(--bg-light); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
@@ -165,7 +172,7 @@
             .author-img-box { max-width: 260px; margin: 0 auto; }
         }
         @media (max-width: 768px) {
-            nav ul { display: none; } /* Oculto para dispositivos móveis simples */
+            nav ul { display: none; }
             .hero h1 { font-size: 1.8rem; }
             .lawyers-banner { text-align: center; justify-content: center; }
         }
@@ -177,16 +184,16 @@
     <header>
         <div class="container nav-wrapper">
             <a href="index.html" class="logo-container">
-                <!-- Imagem Responsiva utilizando Picture Tag com WebP e Fallback PNG -->
                 <picture>
-                    <source srcset="img\LogoLS.webp" type="image/webp">
-                    <img src="img\LogoLS.png" alt="Dr. Lincoln Sposito - Perícia Judicial e Assistência Técnica" width="220" height="60">
+                    <source srcset="img/LogoLS.webp" type="image/webp">
+                    <img src="img/LogoLS.png" alt="Dr. Lincoln Sposito - Perícia Judicial e Assistência Técnica" width="220" height="60">
                 </picture>
             </a>
             
             <nav>
                 <ul>
-                    <li><a href="#severidade">Diagnóstico</a></li>
+                    <li><a href="#severidade">Diagnóstico BR</a></li>
+                    <li><a href="#crossborder">Cross-Border (US)</a></li>
                     <li><a href="#fluxo">Como Atuamos</a></li>
                     <li><a href="#produtos">Produtos Bancários</a></li>
                     <li><a href="#advogados">Para Advogados</a></li>
@@ -215,7 +222,8 @@
             <p>Unimos Inteligência Financeira, Ciência de Dados e Perícia em TI para auditar a "caixa-preta" dos bancos. Proteja seu caixa, expurgue vendas casadas e suspenda buscas e apreensões com laudos matemáticos incontestáveis.</p>
             
             <div class="hero-cta-group">
-                <a href="#severidade" class="btn btn-gold"><i class="fas fa-search"></i> Diagnosticar Meu Contrato</a>
+                <a href="#severidade" class="btn btn-gold"><i class="fas fa-search"></i> Diagnosticar Contrato (BR)</a>
+                <a href="#crossborder" class="btn btn-outline-light"><i class="fas fa-globe-americas"></i> US & Cross-Border Advisory</a>
                 <a href="https://wa.me/5511914612603?text=Olá%20Dr.%20Lincoln,%20preciso%20de%20atendimento%20emergencial%20para%20minha%20empresa." class="btn btn-danger" target="_blank"><i class="fab fa-whatsapp"></i> Socorro Emergencial</a>
             </div>
         </div>
@@ -245,11 +253,11 @@
         </div>
     </div>
 
-    <!-- SELETOR DE NÍVEL DE CRISE DA EMPRESA -->
+    <!-- ETAPA 1: SELETOR DE SEVERIDADE (MERCADO NACIONAL) -->
     <section id="severidade" class="severity-section">
         <div class="container">
             <div class="section-header">
-                <h2>Qual é a Situação Atual da Sua Empresa?</h2>
+                <h2>[ETAPA 1] Diagnóstico de Crise — Operações Nacionais (Brasil)</h2>
                 <p>Identifique o momento financeiro da sua operação para receber o direcionamento pericial adequado.</p>
             </div>
 
@@ -297,6 +305,63 @@
                         </ul>
                     </div>
                     <a href="https://wa.me/5511914612603?text=URGENTE:%20Minha%20empresa%20está%20com%20processo%20ou%20busca%20e%20apreensão." class="btn btn-danger" style="width: 100%;" target="_blank"><i class="fab fa-whatsapp"></i> Socorro Emergencial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ETAPA 2: EXPANSÃO EUA & CROSS-BORDER MARKET -->
+    <section id="crossborder" class="crossborder-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>[ETAPA 2] USA Market & Cross-Border Advisory</h2>
+                <p>Soluções periciais e auditoria forense para empresas brasileiras nos EUA, corporações americanas no Brasil, Comércio Exterior e Gateways de Pagamento.</p>
+            </div>
+
+            <div class="severity-grid">
+                <!-- PREVENTIVO (USA) -->
+                <div class="crossborder-card">
+                    <div>
+                        <span class="severity-tag" style="background: rgba(22, 163, 74, 0.2); color: #4ade80;">🟢 Preventive — FX & Trade</span>
+                        <h3 style="color: #ffffff; margin-bottom: 12px; font-size: 1.35rem;">Opacidade em Câmbio (FX) & Trade Finance</h3>
+                        <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px;">Identificação de *Hidden Spreads* em remessas internacionais, opacidade em travamento de câmbio (*hedging*) e tarifas camufladas em contratos de comércio exterior.</p>
+                        <ul class="severity-list" style="margin-bottom: 30px;">
+                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> **FX Spread Audit & Tariff Compliance**</li>
+                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> Auditoria de Taxas Nominais vs. Efetivas</li>
+                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> Mapeamento de margens ocultas em corretoras</li>
+                        </ul>
+                    </div>
+                    <a href="#contato" class="btn btn-gold" style="width: 100%;">[ Schedule FX & Trade Audit ]</a>
+                </div>
+
+                <!-- MÉDIO / OPERACIONAL (USA) -->
+                <div class="crossborder-card">
+                    <div>
+                        <span class="severity-tag" style="background: rgba(217, 119, 6, 0.2); color: #fcd34d;">🟡 Operational — Payment Systems</span>
+                        <h3 style="color: #ffffff; margin-bottom: 12px; font-size: 1.35rem;">Middleware & Gateways (Stripe, Adyen)</h3>
+                        <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px;">Controvérsias de retivas de fundos (*rolling reserves*), erros de liquidação (*settlement*) e falhas de conciliação API em adquirentes internacionais.</p>
+                        <ul class="severity-list" style="margin-bottom: 30px;">
+                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> **Payment System Log Forensics**</li>
+                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> Análise e Custeio Forense de Dados (ISO 27037)</li>
+                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> Prova de falhas sistêmicas na retenção de capital</li>
+                        </ul>
+                    </div>
+                    <a href="#contato" class="btn btn-gold" style="width: 100%;">[ Request Technical Log Audit ]</a>
+                </div>
+
+                <!-- GRAVE / LITÍGIO (USA) -->
+                <div class="crossborder-card" style="border-color: rgba(220, 38, 38, 0.5);">
+                    <div>
+                        <span class="severity-tag" style="background: rgba(220, 38, 38, 0.2); color: #fca5a5;">🔴 Litigation — Expert Witness</span>
+                        <h3 style="color: #ffffff; margin-bottom: 12px; font-size: 1.35rem;">Cross-Border & Syndicated Loans</h3>
+                        <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px;">Processos de execução transfronteiriça, cobrança de garantias internacionais e disputas de crédito corporativo estruturado.</p>
+                        <ul class="severity-list" style="margin-bottom: 30px;">
+                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> **Cross-Border Expert Witness Report**</li>
+                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> Pareceres periciais para cortes americanas</li>
+                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> Suporte em Câmaras de Arbitragem Internacional</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5511914612603?text=US/Cross-Border%20Expert%20Witness%20Inquiry." class="btn btn-danger" style="width: 100%;" target="_blank">[ Consult Expert Witness ]</a>
                 </div>
             </div>
         </div>
@@ -454,28 +519,29 @@
 
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                         <div class="form-group">
-                            <label for="produto">Tipo de Contrato Bancário</label>
+                            <label for="produto">Tipo de Contrato / Operação</label>
                             <select id="produto" class="form-control">
                                 <option value="veiculo">Financiamento de Veículo / Frota</option>
                                 <option value="fgi">CCB / FGI PEAC / Capital de Giro</option>
+                                <option value="fx">Câmbio / Trade Finance (US & Cross-Border)</option>
+                                <option value="gateway">Gateway / Payment Middleware (Stripe/Adyen)</option>
                                 <option value="stalking">Cobrança Abusiva / Stalking</option>
-                                <option value="internacional">Operação Internacional / Câmbio</option>
                                 <option value="outro">Outros Contratos</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="status">Situação do Contrato</label>
+                            <label for="status">Situação da Operação</label>
                             <select id="status" class="form-control">
-                                <option value="dia">Em dia (Buscando Redução Preventiva)</option>
-                                <option value="atraso">Atrasado (1 a 3 parcelas)</option>
-                                <option value="processo">Notificado / Ação Judicial / Busca e Apreensão</option>
+                                <option value="dia">Em dia (Buscando Redução Preventiva / FX Audit)</option>
+                                <option value="atraso">Atrasado / Retenção de Capital em Gateway</option>
+                                <option value="processo">Notificado / Ação Judicial / Litigation Cross-Border</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="mensagem">Resumo da Situação ou Dúvida</label>
-                        <textarea id="mensagem" class="form-control" rows="3" placeholder="Descreva brevemente o problema com o banco..."></textarea>
+                        <textarea id="mensagem" class="form-control" rows="3" placeholder="Descreva brevemente a situação da empresa..."></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-gold" style="width: 100%; font-size: 1rem; margin-top: 10px;">Enviar Para Análise do Perito</button>
