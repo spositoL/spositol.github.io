@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Lincoln Sposito | Perícia Judicial, Finanças & Auditoria Bancária</title>
+    <meta name="description" content="Auditoria de sistemas bancários, perícia em contratos de crédito, FGI PEAC, financiamento de veículos e suporte forense para empresas.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- PALETA DE CORES E VARIÁVEIS --- */
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-light: #f8fafc;
+            --accent-gold: #c5a059;
+            --accent-gold-hover: #b38e46;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --text-light: #f8fafc;
+            --border-color: #e2e8f0;
+            --danger-color: #dc2626;
+            --warning-color: #d97706;
+            --success-color: #16a34a;
+            --font-title: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 30px -10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- RESET BÁSICO --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); color: var(--text-dark); background-color: #ffffff; line-height: 1.6; }
+
+        /* --- TIPOGRAFIA & AUXILIARES --- */
+        h1, h2, h3, h4 { font-family: var(--font-title); line-height: 1.2; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-gold { color: var(--accent-gold); }
+        .bg-dark { background-color: var(--bg-primary); color: var(--text-light); }
+        .bg-light { background-color: var(--bg-light); }
+        
+        /* --- BOTÕES --- */
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; font-weight: 600; font-size: 0.95rem; border-radius: 6px; cursor: pointer; border: none; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn-gold { background-color: var(--accent-gold); color: #ffffff; }
+        .btn-gold:hover { background-color: var(--accent-gold-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .btn-outline-light { border: 2px solid var(--accent-gold); color: var(--accent-gold); background: transparent; }
+        .btn-outline-light:hover { background-color: var(--accent-gold); color: #ffffff; }
+        .btn-danger { background-color: var(--danger-color); color: white; }
+        .btn-danger:hover { background-color: #b91c1c; transform: translateY(-2px); }
+
+        /* --- HEADER & NAVBAR --- */
+        header { background-color: var(--bg-primary); border-bottom: 1px solid rgba(197, 160, 89, 0.2); position: sticky; top: 0; z-index: 1000; padding: 12px 0; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .logo-container img { height: 60px; width: auto; display: block; }
+        nav ul { display: flex; list-style: none; gap: 24px; align-items: center; }
+        nav a { color: var(--text-light); font-size: 0.9rem; font-weight: 500; }
+        nav a:hover { color: var(--accent-gold); }
+        .lang-selector { display: flex; gap: 8px; font-size: 0.8rem; background: var(--bg-secondary); padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.3); }
+        .lang-selector a { color: #94a3b8; font-weight: 600; }
+        .lang-selector a.active { color: var(--accent-gold); }
+
+        /* --- HERO SECTION --- */
+        .hero { background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%); color: white; padding: 80px 0 100px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 50% 20%, rgba(197, 160, 89, 0.15), transparent 70%); }
+        .hero-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+        .badge-hero { display: inline-block; background: rgba(197, 160, 89, 0.15); color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 24px; letter-spacing: 1px; }
+        .hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 20px; color: #ffffff; }
+        .hero p { font-size: 1.15rem; color: #94a3b8; margin-bottom: 36px; max-width: 750px; margin-left: auto; margin-right: auto; }
+        .hero-cta-group { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+        /* --- TRUST BAR --- */
+        .trust-bar { background-color: #ffffff; border-bottom: 1px solid var(--border-color); padding: 30px 0; margin-top: -40px; position: relative; z-index: 10; border-radius: 8px; box-shadow: var(--shadow-md); }
+        .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; text-align: center; }
+        .trust-item h3 { font-size: 1.8rem; color: var(--accent-gold); margin-bottom: 4px; font-family: var(--font-body); font-weight: 700; }
+        .trust-item p { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; }
+
+        /* --- SELETOR DE SEVERIDADE / NÍVEL DE CRISE --- */
+        .severity-section { padding: 90px 0 60px; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.2rem; color: var(--bg-primary); margin-bottom: 12px; }
+        .section-header p { color: var(--text-muted); font-size: 1.05rem; }
+        
+        .severity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .severity-card { background: white; border: 1px solid var(--border-color); border-radius: 12px; padding: 36px 28px; position: relative; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; }
+        .severity-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .severity-card.level-1 { border-top: 5px solid var(--success-color); }
+        .severity-card.level-2 { border-top: 5px solid var(--warning-color); }
+        .severity-card.level-3 { border-top: 5px solid var(--danger-color); }
+        
+        .severity-tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 16px; }
+        .level-1 .severity-tag { background: #dcfce7; color: var(--success-color); }
+        .level-2 .severity-tag { background: #fef3c7; color: var(--warning-color); }
+        .level-3 .severity-tag { background: #fee2e2; color: var(--danger-color); }
+        
+        .severity-card h3 { font-size: 1.35rem; margin-bottom: 12px; color: var(--bg-primary); }
+        .severity-card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; }
+        .severity-list { list-style: none; margin-bottom: 30px; }
+        .severity-list li { font-size: 0.9rem; color: var(--text-dark); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .severity-list li i { font-size: 0.8rem; }
+
+        /* --- FLUXO DOS 5 PASSOS DE SOLUÇÃO --- */
+        .flow-section { padding: 80px 0; background-color: var(--bg-light); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+        .flow-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 40px; position: relative; }
+        .flow-step { background: white; padding: 24px 20px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center; position: relative; }
+        .step-number { width: 36px; height: 36px; background: var(--bg-primary); color: var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 16px; font-size: 0.9rem; }
+        .flow-step h4 { font-size: 1rem; margin-bottom: 8px; color: var(--bg-primary); }
+        .flow-step p { font-size: 0.82rem; color: var(--text-muted); }
+
+        /* --- DIFERENCIAL TÉCNICO --- */
+        .diff-section { padding: 90px 0; }
+        .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .diff-box { background: var(--bg-primary); color: white; padding: 40px; border-radius: 12px; border-left: 6px solid var(--accent-gold); }
+        .diff-box h3 { font-size: 1.8rem; margin-bottom: 16px; color: #ffffff; }
+        .diff-box p { color: #94a3b8; font-size: 0.98rem; margin-bottom: 20px; }
+
+        /* --- PRODUTOS BANCÁRIOS AUDITADOS --- */
+        .products-section { padding: 80px 0; background: var(--bg-light); }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .product-card { background: white; padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); }
+        .product-card i { font-size: 2rem; color: var(--accent-gold); margin-bottom: 16px; }
+        .product-card h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--bg-primary); }
+        .product-card p { font-size: 0.88rem; color: var(--text-muted); }
+
+        /* --- PARCERIA COM ADVOGADOS --- */
+        .lawyers-banner { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; padding: 50px 40px; border-radius: 12px; border: 1px solid rgba(197, 160, 89, 0.3); margin: 60px 0; display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; }
+        .lawyers-banner h3 { font-size: 1.8rem; color: #ffffff; margin-bottom: 8px; }
+        .lawyers-banner p { color: #94a3b8; max-width: 650px; font-size: 0.95rem; }
+
+        /* --- AUTORIDADE / DR LINCOLN --- */
+        .author-section { padding: 90px 0; }
+        .author-grid { display: grid; grid-template-columns: 300px 1fr; gap: 50px; align-items: center; }
+        .author-img-box img { width: 100%; border-radius: 12px; box-shadow: var(--shadow-md); border: 2px solid var(--accent-gold); }
+        .author-info h3 { font-size: 2rem; color: var(--bg-primary); margin-bottom: 6px; }
+        .author-title { color: var(--accent-gold); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; margin-bottom: 20px; display: block; }
+        .author-info p { color: var(--text-muted); margin-bottom: 16px; font-size: 0.95rem; }
+
+        /* --- FORMULÁRIO DE QUALIFICAÇÃO DE LEAD --- */
+        .form-section { padding: 90px 0; background: var(--bg-primary); color: white; }
+        .form-container { max-width: 700px; margin: 0 auto; background: var(--bg-secondary); padding: 40px; border-radius: 12px; border: 1px solid rgba(197, 160, 89, 0.3); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--accent-gold); text-transform: uppercase; }
+        .form-control { width: 100%; padding: 12px 16px; border-radius: 6px; border: 1px solid #334155; background: #0f172a; color: white; font-family: var(--font-body); font-size: 0.95rem; }
+        .form-control:focus { outline: none; border-color: var(--accent-gold); }
+        
+        /* --- FOOTER & WHATSAPP FLUTUANTE --- */
+        footer { background-color: #090d16; color: #64748b; padding: 40px 0 20px; border-top: 1px solid #1e293b; font-size: 0.85rem; text-align: center; }
+        footer p { margin-bottom: 10px; }
+        footer a { color: var(--accent-gold); }
+        
+        .whatsapp-float { position: fixed; bottom: 24px; right: 24px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: var(--shadow-lg); z-index: 9999; transition: transform 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 2.2rem; }
+            .diff-grid, .author-grid { grid-template-columns: 1fr; }
+            .author-img-box { max-width: 260px; margin: 0 auto; }
+        }
+        @media (max-width: 768px) {
+            nav ul { display: none; } /* Oculto para dispositivos móveis simples */
+            .hero h1 { font-size: 1.8rem; }
+            .lawyers-banner { text-align: center; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER & NAVBAR -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo-container">
+                <!-- Imagem Responsiva utilizando Picture Tag com WebP e Fallback PNG -->
+                <picture>
+                    <source srcset="img\LogoLS.webp" type="image/webp">
+                    <img src="img\LogoLS.png" alt="Dr. Lincoln Sposito - Perícia Judicial e Assistência Técnica" width="220" height="60">
+                </picture>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="#severidade">Diagnóstico</a></li>
+                    <li><a href="#fluxo">Como Atuamos</a></li>
+                    <li><a href="#produtos">Produtos Bancários</a></li>
+                    <li><a href="#advogados">Para Advogados</a></li>
+                    <li><a href="#autoridade">O Perito</a></li>
+                </ul>
+            </nav>
+
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <div class="lang-selector">
+                    <a href="#" class="active">PT</a>
+                    <span>|</span>
+                    <a href="#">EN</a>
+                    <span>|</span>
+                    <a href="#">ES</a>
+                </div>
+                <a href="#contato" class="btn btn-gold" style="padding: 10px 18px; font-size: 0.8rem;">Falar com Perito</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="badge-hero">Perícia Bancária & Engenharia de Dados</span>
+            <h1>Sua Empresa Não Precisa Quebrar Para Pagar Juros Abusivos e Erros Bancários</h1>
+            <p>Unimos Inteligência Financeira, Ciência de Dados e Perícia em TI para auditar a "caixa-preta" dos bancos. Proteja seu caixa, expurgue vendas casadas e suspenda buscas e apreensões com laudos matemáticos incontestáveis.</p>
+            
+            <div class="hero-cta-group">
+                <a href="#severidade" class="btn btn-gold"><i class="fas fa-search"></i> Diagnosticar Meu Contrato</a>
+                <a href="https://wa.me/5511914612603?text=Olá%20Dr.%20Lincoln,%20preciso%20de%20atendimento%20emergencial%20para%20minha%20empresa." class="btn btn-danger" target="_blank"><i class="fab fa-whatsapp"></i> Socorro Emergencial</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR DE MÉTRICAS -->
+    <div class="container">
+        <div class="trust-bar">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <h3>-21.8%</h3>
+                    <p>Redução Média no Custo Total</p>
+                </div>
+                <div class="trust-item">
+                    <h3>100%</h3>
+                    <p>Expurgo em Vendas Casadas</p>
+                </div>
+                <div class="trust-item">
+                    <h3>Tema 28 STJ</h3>
+                    <p>Anulação da Mora & Busca/Apreensão</p>
+                </div>
+                <div class="trust-item">
+                    <h3>ISO/IEC 27037</h3>
+                    <p>Cadeia de Custódia de Dados</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SELETOR DE NÍVEL DE CRISE DA EMPRESA -->
+    <section id="severidade" class="severity-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Qual é a Situação Atual da Sua Empresa?</h2>
+                <p>Identifique o momento financeiro da sua operação para receber o direcionamento pericial adequado.</p>
+            </div>
+
+            <div class="severity-grid">
+                <!-- NÍVEL 1: PREVENTIVO -->
+                <div class="severity-card level-1">
+                    <div>
+                        <span class="severity-tag">🟢 Nível 1 — Preventivo</span>
+                        <h3>Em Dia, Mas Com Caixa Sufocado</h3>
+                        <p>Sua empresa honra as parcelas, mas o valor consome a margem operacional e o saldo devedor parece não cair.</p>
+                        <ul class="severity-list">
+                            <li><i class="fas fa-check-circle text-gold"></i> Revisão de CCB, FGI PEAC e Capital de Giro</li>
+                            <li><i class="fas fa-check-circle text-gold"></i> Identificação de Seguro Prestamista Retido</li>
+                            <li><i class="fas fa-check-circle text-gold"></i> Recálculo do Custo Efetivo Total (CET) Real</li>
+                        </ul>
+                    </div>
+                    <a href="#contato" class="btn btn-outline-light" style="width: 100%;">Solicitar Triagem Preventiva</a>
+                </div>
+
+                <!-- NÍVEL 2: MÉDIO -->
+                <div class="severity-card level-2">
+                    <div>
+                        <span class="severity-tag">🟡 Nível 2 — Início de Atraso</span>
+                        <h3>1 a 3 Parcelas Atrasadas</h3>
+                        <p>Cobranças frequentes, propostas de renegociação abusivas do banco e risco de encarecimento da dívida.</p>
+                        <ul class="severity-list">
+                            <li><i class="fas fa-check-circle text-gold"></i> Recálculo via Método de Gauss (Juros Simples)</li>
+                            <li><i class="fas fa-check-circle text-gold"></i> Bloqueio do Assédio Algorítmico de Cobrança</li>
+                            <li><i class="fas fa-check-circle text-gold"></i> Preparação para Repactuação Justa</li>
+                        </ul>
+                    </div>
+                    <a href="#contato" class="btn btn-gold" style="width: 100%;">Auditar Contrato Atrasado</a>
+                </div>
+
+                <!-- NÍVEL 3: CRÍTICO -->
+                <div class="severity-card level-3">
+                    <div>
+                        <span class="severity-tag">🔴 Nível 3 — Crítico / Emergencial</span>
+                        <h3>Ação Judicial, Protesto ou Busca e Apreensão</h3>
+                        <p>Notificação de busca e apreensão da frota, negativação de CNPJ ou risco de bloqueio de contas operacionais.</p>
+                        <ul class="severity-list">
+                            <li><i class="fas fa-check-circle text-gold"></i> Laudo Emergencial de Nulidade da Mora</li>
+                            <li><i class="fas fa-check-circle text-gold"></i> Aplicação da Tese do Tema 28 do STJ</li>
+                            <li><i class="fas fa-check-circle text-gold"></i> Sustação de Protestos & Baixa Cadastral</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5511914612603?text=URGENTE:%20Minha%20empresa%20está%20com%20processo%20ou%20busca%20e%20apreensão." class="btn btn-danger" style="width: 100%;" target="_blank"><i class="fab fa-whatsapp"></i> Socorro Emergencial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O FLUXO DE 5 PASSOS DA SOLUÇÃO -->
+    <section id="fluxo" class="flow-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nosso Fluxo de Resolução de Problemas Bancários</h2>
+                <p>Uma metodologia estruturada de 5 passos que garante previsibilidade, transparência e segurança jurídica.</p>
+            </div>
+
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <h4>Diagnóstico Express</h4>
+                    <p>Varredura inicial no contrato e extratos para checar viabilidade técnica em 24h.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <h4>Perícia Algorítmica</h4>
+                    <p>Engenharia reversa no motor do banco para evidenciar anatomia dos juros e *Gross Up*.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <h4>Ação / Defesa Judicial</h4>
+                    <p>Emissão de laudo pericial científico para o seu advogado instruir o processo com prova material.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <h4>Notificação & Proteção</h4>
+                    <p>Impugnação cadastral no Bacen e sustação judicial de protestos indevidos.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="step-number">5</div>
+                    <h4>Acompanhamento Técnico</h4>
+                    <p>Assistência técnica contínua com quesitação estratégica até a solução final do passivo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAL TÉCNICO -->
+    <section class="diff-section">
+        <div class="container">
+            <div class="diff-grid">
+                <div>
+                    <span class="text-gold" style="font-weight: 700; text-transform: uppercase; font-size: 0.85rem;">Por Que Nossa Perícia Vence o Banco?</span>
+                    <h2 style="font-size: 2.2rem; color: var(--bg-primary); margin: 12px 0 20px;">O Banco Não Erra no Excel; Ele Parametriza o Algoritmo Para Cobrar A Mais</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Diferente da perícia contábil comum que apenas confere somas de tabelas prontas, nossa atuação analisa a **lógica de código e dados** por trás dos terminais bancários.</p>
+                    <p style="color: var(--text-muted);">Mapeamos arredondamentos ocultos, seguros embutidos sem destaque de fluxo de caixa e divergências gritantes entre a taxa nominal acordada e o Custo Efetivo Total (CET) cobrado do empresário.</p>
+                </div>
+                <div class="diff-box">
+                    <h3>Auditoria de Sistemas + Perícia de Dados</h3>
+                    <p>Utilizamos ferramentas avançadas de data science para extrair a caixa-preta dos contratos e demonstrar matematicamente a ilicitude do débito ao juiz.</p>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 20px;">
+                        <span class="text-gold" style="font-weight: 700;">✦ Garantia do Método Científico</span>
+                        <p style="font-size: 0.85rem; margin-top: 5px; color: #cbd5e1;">Todos os laudos seguem rigidamente os parâmetros das Resoluções do Banco Central, Código de Processo Civil e ISO/IEC 27037.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUTOS BANCÁRIOS AUDITADOS -->
+    <section id="produtos" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Produtos Bancários Auditados</h2>
+                <p>Especialização técnica focada nas operações de crédito que mais impactam empresas e empresários.</p>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <i class="fas fa-truck-monster"></i>
+                    <h3>Financiamento de Veículos & Frotas</h3>
+                    <p>Anulação de Busca e Apreensão por erro no CET, expurgo de *Gross Up* e eliminação do anatocismo oculto em contratos CDC e Leasing.</p>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-building-columns"></i>
+                    <h3>CCB & FGI PEAC (Capital de Giro)</h3>
+                    <p>Devolução e expurgo de seguro prestamista imposto e retido na fonte, eliminando tarifas que funcionam como *spread* disfarçado.</p>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-phone-slash"></i>
+                    <h3>Assédio Algorítmico & Stalking</h3>
+                    <p>Extração forense de logs e metadados para cessar disparos automáticos de discadores e expurgar honorários ilegais em boletos.</p>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>Câmbio & Operações Cross-Border</h3>
+                    <p>Auditoria de *spreads* ocultos em remessas internacionais, *trade finance* e falhas em gateways de pagamento para empresas que atuam fora do Brasil.</p>
+                </div>
+            </div>
+
+            <!-- PARCERIA COM ADVOGADOS -->
+            <div id="advogados" class="lawyers-banner">
+                <div>
+                    <h3>É Advogado ou Possui Departamento Jurídico?</h3>
+                    <p>Nós não substituímos o advogado da empresa. Trabalhamos em estreita parceria com ele, fornecendo a sustentação matemática e os quesitos técnicos necessários para vencer a tese bancária no processo.</p>
+                </div>
+                <a href="#contato" class="btn btn-gold" style="white-space: nowrap;">Parceria com Advogados</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE O PERITO (DR LINCOLN SPOSITO) -->
+    <section id="autoridade" class="author-section">
+        <div class="container">
+            <div class="author-grid">
+                <div class="author-img-box">
+                    <img src="img/perito-judicial-administracao-lincoln-sposito.webp" alt="Dr. Lincoln Sposito, Perito Judicial e Doutor em Administração" onerror="this.src='https://via.placeholder.com/300x380?text=Dr.+Lincoln+Sposito'">
+                </div>
+                <div class="author-info">
+                    <h3>Dr. Lincoln Sposito</h3>
+                    <span class="author-title">Doutor em Administração | Perito Judicial | Especialista em TI e IA (MIT)</span>
+                    <p>Especialista em auditoria bancária e perícia financeira, o Dr. Lincoln Sposito une o rigor estatístico da Ciência de Dados com a análise profunda de arquiteturas de sistemas bancários.</p>
+                    <p>Atua como Perito Judicial e Assistente Técnico para empresas nacionais e internacionais, produzindo laudos periciais e pareceres de altíssima precisão para desarmar cobranças predatórias de instituições financeiras.</p>
+                    <div style="display: flex; gap: 16px; margin-top: 24px; font-size: 0.85rem; font-weight: 600; color: var(--bg-primary);">
+                        <span><i class="fas fa-graduation-cap text-gold"></i> PhD em Administração</span>
+                        <span><i class="fas fa-certificate text-gold"></i> Data Science (MIT)</span>
+                        <span><i class="fas fa-gavel text-gold"></i> Cadastrado nos Tribunais</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE CAPTURA / QUALIFICAÇÃO DE LEAD -->
+    <section id="contato" class="form-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white;">Solicite um Diagnóstico Pericial do Seu Contrato</h2>
+                <p style="color: #94a3b8;">Preencha os dados abaixo para receber uma avaliação preliminar de viabilidade técnica.</p>
+            </div>
+
+            <div class="form-container">
+                <form action="#" method="POST" onsubmit="alert('Obrigado pelo contato! Nossa equipe entrará em contato em breve.'); return false;">
+                    <div class="form-group">
+                        <label for="nome">Nome do Empresário / Contato</label>
+                        <input type="text" id="nome" class="form-control" placeholder="Seu nome completo" required>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div class="form-group">
+                            <label for="empresa">Empresa (Razão Social ou Nome Fantasia)</label>
+                            <input type="text" id="empresa" class="form-control" placeholder="Nome da empresa" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp Corporativo</label>
+                            <input type="tel" id="whatsapp" class="form-control" placeholder="(11) 99999-9999" required>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div class="form-group">
+                            <label for="produto">Tipo de Contrato Bancário</label>
+                            <select id="produto" class="form-control">
+                                <option value="veiculo">Financiamento de Veículo / Frota</option>
+                                <option value="fgi">CCB / FGI PEAC / Capital de Giro</option>
+                                <option value="stalking">Cobrança Abusiva / Stalking</option>
+                                <option value="internacional">Operação Internacional / Câmbio</option>
+                                <option value="outro">Outros Contratos</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Situação do Contrato</label>
+                            <select id="status" class="form-control">
+                                <option value="dia">Em dia (Buscando Redução Preventiva)</option>
+                                <option value="atraso">Atrasado (1 a 3 parcelas)</option>
+                                <option value="processo">Notificado / Ação Judicial / Busca e Apreensão</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Resumo da Situação ou Dúvida</label>
+                        <textarea id="mensagem" class="form-control" rows="3" placeholder="Descreva brevemente o problema com o banco..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-gold" style="width: 100%; font-size: 1rem; margin-top: 10px;">Enviar Para Análise do Perito</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dr. Lincoln Sposito — Perícia Judicial e Assistência Técnica. Todos os direitos reservados.</p>
+            <p>Atuação em conformidade técnica e científica. Este site possui caráter informativo e estritamente profissional.</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLUTUANTE (CONVERSÃO DIRETA) -->
+    <a href="https://wa.me/5511914612603?text=Olá%20Dr.%20Lincoln,%20gostaria%20de%20falar%20sobre%20uma%20perícia%20para%20minha%20empresa." class="whatsapp-float" target="_blank" aria-label="Falar com Dr. Lincoln no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
