@@ -126,14 +126,16 @@
 
         /* --- HEADER & NAVBAR --- */
         header { background-color: var(--bg-primary); border-bottom: 1px solid rgba(197, 160, 89, 0.2); position: sticky; top: 0; z-index: 1000; padding: 12px 0; }
-        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
         .logo-container img { height: 60px; width: auto; display: block; }
-        nav ul { display: flex; list-style: none; gap: 16px; align-items: center; }
-        nav a { color: var(--text-light); font-size: 0.82rem; font-weight: 500; }
+        nav ul { display: flex; list-style: none; gap: 12px; align-items: center; }
+        nav a { color: var(--text-light); font-size: 0.78rem; font-weight: 500; white-space: nowrap; }
         nav a:hover { color: var(--accent-gold); }
-        .lang-selector { display: flex; gap: 8px; font-size: 0.8rem; background: var(--bg-secondary); padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.3); }
+        .lang-selector { display: flex; gap: 8px; font-size: 0.8rem; background: var(--bg-secondary); padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.3); white-space: nowrap; }
         .lang-selector a { color: #94a3b8; font-weight: 600; }
         .lang-selector a.active { color: var(--accent-gold); }
+        .nav-toggle { display: none; background: none; border: none; color: var(--text-light); font-size: 1.4rem; cursor: pointer; padding: 4px 6px; line-height: 1; }
+        .nav-toggle:hover { color: var(--accent-gold); }
 
         /* --- HERO SECTION --- */
         .hero { background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%); color: white; padding: 80px 0 100px; text-align: center; position: relative; overflow: hidden; }
@@ -262,15 +264,26 @@
         .whatsapp-float:hover { transform: scale(1.1); }
 
         /* --- RESPONSIVIDADE --- */
+        @media (max-width: 1400px) {
+            .nav-toggle { display: inline-flex; align-items: center; }
+            nav { position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-primary); border-bottom: 1px solid rgba(197, 160, 89, 0.25); max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+            header.nav-open nav { max-height: 520px; box-shadow: var(--shadow-lg); }
+            nav ul { flex-direction: column; align-items: stretch; gap: 0; padding: 4px 24px 18px; }
+            nav ul li { width: 100%; }
+            nav a { display: block; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.07); white-space: normal; font-size: 0.92rem; }
+            nav ul li:last-child a { border-bottom: none; }
+        }
         @media (max-width: 992px) {
             .hero h1 { font-size: 2.2rem; }
             .diff-grid, .author-grid { grid-template-columns: 1fr; }
             .author-img-box { max-width: 260px; margin: 0 auto; }
         }
         @media (max-width: 768px) {
-            nav ul { display: none; }
             .hero h1 { font-size: 1.8rem; }
             .lawyers-banner { text-align: center; justify-content: center; }
+        }
+        @media (max-width: 480px) {
+            .lang-selector { display: none; }
         }
     </style>
 </head>
@@ -286,7 +299,7 @@
                 </picture>
             </a>
             
-            <nav>
+            <nav id="mainNav">
                 <ul>
                     <li><a href="#severidade">Diagnóstico BR</a></li>
                     <li><a href="#crossborder">US Market</a></li>
@@ -307,6 +320,9 @@
                     <a href="latam-advisory/index.html" title="América Latina (Español)">LATAM/ES</a>
                 </div>
                 <a href="#contato" class="btn btn-gold" style="padding: 10px 18px; font-size: 0.8rem;">Falar com Perito</a>
+                <button type="button" class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -892,8 +908,38 @@
 	   rel="noopener noreferrer"
 	   aria-label="Falar com Dr. Lincoln no WhatsApp"
 	   onclick="gtag('event', 'click_whatsapp', {'event_category': 'Lead', 'event_label': 'Socorro Emergencial'});">
-	<i class="fab fa-whatsapp"></i> 
+	<i class="fab fa-whatsapp"></i>
 	</a>
+
+    <!-- MENU MOBILE (TOGGLE) -->
+    <script>
+        (function () {
+            var header = document.querySelector('header');
+            var toggle = document.getElementById('navToggle');
+            var nav = document.getElementById('mainNav');
+            if (!header || !toggle || !nav) return;
+
+            function closeNav() {
+                header.classList.remove('nav-open');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+
+            toggle.addEventListener('click', function () {
+                var isOpen = header.classList.toggle('nav-open');
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                toggle.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', closeNav);
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 1400) closeNav();
+            });
+        })();
+    </script>
 
 </body>
 </html>
