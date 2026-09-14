@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+	<!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5F1FGJ25TK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5F1FGJ25TK');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro de Alíquota PF em Vez de PJ: o Erro que se Repete em CCBs | Dr. Lincoln Sposito</title>
+    <meta name="description" content="Um erro de parametrização recorrente: bancos aplicam a alíquota de IOF de pessoa física em operações de crédito PJ, inflando o capital financiado e os juros compostos sobre ele.">
+    <link rel="canonical" href="https://spositol.github.io/blog/erro-aliquota-pf-pj/">
+
+    <!-- Hreflang: versões do mesmo artigo -->
+    <link rel="alternate" hreflang="pt-BR" href="https://spositol.github.io/blog/erro-aliquota-pf-pj/">
+    <link rel="alternate" hreflang="en" href="https://spositol.github.io/blog/erro-aliquota-pf-pj/en/">
+    <link rel="alternate" hreflang="es" href="https://spositol.github.io/blog/erro-aliquota-pf-pj/es/">
+    <link rel="alternate" hreflang="x-default" href="https://spositol.github.io/blog/erro-aliquota-pf-pj/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../img/apple-touch-icon.png">
+
+    <!-- Open Graph / Twitter Card -->
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Dr. Lincoln Sposito - Perícia Judicial">
+    <meta property="og:url" content="https://spositol.github.io/blog/erro-aliquota-pf-pj/">
+    <meta property="og:title" content="Erro de Alíquota PF em Vez de PJ: o Erro que se Repete em CCBs">
+    <meta property="og:description" content="Um erro de parametrização recorrente: bancos aplicam a alíquota de IOF de pessoa física em operações PJ, inflando o capital financiado e os juros sobre ele.">
+    <meta property="og:image" content="https://spositol.github.io/img/dr-lincoln-sposito.jpg">
+    <meta property="article:published_time" content="2026-09-14">
+    <meta property="article:modified_time" content="2026-09-14">
+    <meta property="article:author" content="Lincoln Sposito">
+    <meta property="article:section" content="Perícia Bancária">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Erro de Alíquota PF em Vez de PJ: o Erro que se Repete em CCBs">
+    <meta name="twitter:description" content="Bancos aplicam a alíquota de IOF de pessoa física em operações de crédito PJ, inflando o capital financiado.">
+    <meta name="twitter:image" content="https://spositol.github.io/img/dr-lincoln-sposito.jpg">
+
+    <!-- JSON-LD: Breadcrumb + Article + FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://spositol.github.io/" },
+            { "@type": "ListItem", "position": 2, "name": "Artigos", "item": "https://spositol.github.io/#artigos" },
+            { "@type": "ListItem", "position": 3, "name": "Erro de Alíquota PF em Vez de PJ", "item": "https://spositol.github.io/blog/erro-aliquota-pf-pj/" }
+          ]
+        },
+        {
+          "@type": "Article",
+          "@id": "https://spositol.github.io/blog/erro-aliquota-pf-pj/#article",
+          "headline": "Erro de Alíquota PF em Vez de PJ: o Erro que se Repete em CCBs",
+          "description": "Um erro de parametrização recorrente: bancos aplicam a alíquota de IOF de pessoa física em operações de crédito PJ, inflando o capital financiado e os juros compostos sobre ele.",
+          "image": "https://spositol.github.io/img/dr-lincoln-sposito.jpg",
+          "author": { "@type": "Person", "name": "Lincoln Sposito", "url": "https://spositol.github.io/#person", "jobTitle": "Perito Financeiro" },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Dr. Lincoln Sposito - Perícia Judicial",
+            "logo": { "@type": "ImageObject", "url": "https://spositol.github.io/img/LogoLS.png" }
+          },
+          "datePublished": "2026-09-14",
+          "dateModified": "2026-09-14",
+          "mainEntityOfPage": "https://spositol.github.io/blog/erro-aliquota-pf-pj/",
+          "inLanguage": "pt-BR",
+          "articleSection": "Perícia Bancária",
+          "keywords": "IOF pessoa jurídica, alíquota IOF, CCB, gross-up, CET, perícia bancária, Decreto 6.306/2007"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Por que a alíquota de IOF para pessoa jurídica é diferente da de pessoa física?",
+              "acceptedAnswer": { "@type": "Answer", "text": "O Decreto nº 6.306/2007 estabelece alíquotas distintas para operações de crédito de pessoa física e de pessoa jurídica. Quando o sistema do banco aplica a alíquota errada, o valor do imposto calculado diverge do que seria devido pela natureza real da operação." }
+            },
+            {
+              "@type": "Question",
+              "name": "Por que esse erro é difícil de perceber pelo tomador?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Porque o IOF aparece no contrato como um valor consolidado, sem discriminação da alíquota aplicada. Só a reconstituição técnica do cálculo, com base na legislação vigente na data da contratação, revela qual alíquota foi efetivamente usada." }
+            },
+            {
+              "@type": "Question",
+              "name": "O que acontece quando o IOF calculado errado é financiado dentro do principal?",
+              "acceptedAnswer": { "@type": "Answer", "text": "O excesso de imposto passa a compor o valor de face do título como se fosse capital genuinamente emprestado, gerando juros compostos sobre uma base artificialmente maior ao longo de toda a vida do contrato." }
+            },
+            {
+              "@type": "Question",
+              "name": "Como verificar se minha empresa foi afetada por esse erro?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Solicite ao banco o memorial de cálculo do IOF e confira se a alíquota diária e a alíquota adicional aplicadas correspondem às tabelas vigentes para pessoa jurídica na data da contratação, e não às tabelas de pessoa física." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-primary: #0f172a; --bg-secondary: #1e293b; --bg-darker: #020617; --bg-light: #f8fafc;
+            --accent-gold: #c5a059; --accent-gold-hover: #b38e46; --text-dark: #0f172a; --text-muted: #475569;
+            --text-light: #f8fafc; --border-color: #e2e8f0; --danger-color: #dc2626; --warning-color: #d97706;
+            --success-color: #16a34a; --font-title: 'Playfair Display', Georgia, serif; --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06); --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.1); --shadow-lg: 0 20px 30px -10px rgba(0, 0, 0, 0.2);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); color: var(--text-dark); background-color: #ffffff; line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: var(--font-title); line-height: 1.2; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-gold { color: var(--accent-gold); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; font-weight: 600; font-size: 0.95rem; border-radius: 6px; cursor: pointer; border: none; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn-gold { background-color: var(--accent-gold); color: #ffffff; }
+        .btn-gold:hover { background-color: var(--accent-gold-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .btn-outline-light { border: 2px solid var(--accent-gold); color: var(--accent-gold); background: transparent; }
+        .btn-outline-light:hover { background-color: var(--accent-gold); color: #ffffff; }
+        .btn-danger { background-color: var(--danger-color); color: white; }
+        .btn-danger:hover { background-color: #b91c1c; transform: translateY(-2px); }
+        header { background-color: var(--bg-primary); border-bottom: 1px solid rgba(197, 160, 89, 0.2); position: sticky; top: 0; z-index: 1000; padding: 12px 0; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .logo-container img { height: 60px; width: auto; display: block; }
+        nav ul { display: flex; list-style: none; gap: 16px; align-items: center; }
+        nav a { color: var(--text-light); font-size: 0.82rem; font-weight: 500; }
+        nav a:hover { color: var(--accent-gold); }
+        .lang-selector { display: flex; gap: 8px; font-size: 0.8rem; background: var(--bg-secondary); padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.3); }
+        .lang-selector a { color: #94a3b8; font-weight: 600; }
+        .lang-selector a.active { color: var(--accent-gold); }
+        .breadcrumb { font-size: 0.8rem; color: #94a3b8; margin-bottom: 18px; }
+        .breadcrumb a { color: #94a3b8; }
+        .breadcrumb a:hover { color: var(--accent-gold); }
+        .breadcrumb .sep { margin: 0 8px; color: #475569; }
+        .article-hero { background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%); color: white; padding: 50px 0 60px; position: relative; overflow: hidden; }
+        .article-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 15% 20%, rgba(197, 160, 89, 0.15), transparent 60%); }
+        .article-hero .container { position: relative; z-index: 2; }
+        .badge-hero { display: inline-block; background: rgba(197, 160, 89, 0.15); color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 6px 16px; border-radius: 30px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px; }
+        .article-hero h1 { font-size: 2.3rem; font-weight: 700; margin-bottom: 20px; color: #ffffff; max-width: 880px; }
+        .article-meta { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; color: #94a3b8; font-size: 0.88rem; }
+        .article-meta .meta-author { display: flex; align-items: center; gap: 10px; }
+        .article-meta img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-gold); }
+        .article-meta strong { color: #e2e8f0; }
+        .article-wrap { padding: 60px 0 30px; }
+        .article-content { max-width: 760px; margin: 0 auto; }
+        .lead { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.7; }
+        .article-content h2 { font-size: 1.55rem; color: var(--bg-primary); margin: 46px 0 18px; padding-bottom: 10px; border-bottom: 2px solid var(--border-color); position: relative; }
+        .article-content h2::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 60px; height: 2px; background: var(--accent-gold); }
+        .article-content p { color: #334155; margin-bottom: 18px; font-size: 1.02rem; line-height: 1.78; }
+        .article-content strong { color: var(--bg-primary); }
+        .article-content em { color: var(--text-muted); }
+        .toc-box { background: var(--bg-light); border: 1px solid var(--border-color); border-left: 4px solid var(--accent-gold); border-radius: 8px; padding: 22px 26px; margin-bottom: 38px; }
+        .toc-box h4 { font-family: var(--font-body); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--accent-gold); margin-bottom: 12px; font-weight: 700; }
+        .toc-box ol { padding-left: 20px; }
+        .toc-box li { margin-bottom: 8px; font-size: 0.92rem; }
+        .toc-box a { color: var(--text-dark); font-weight: 500; }
+        .toc-box a:hover { color: var(--accent-gold); }
+        .table-wrap { overflow-x: auto; margin: 24px 0 12px; border-radius: 8px; box-shadow: var(--shadow-sm); }
+        .data-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+        .data-table th { background: var(--bg-primary); color: var(--accent-gold); text-align: left; padding: 12px 16px; font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-dark); }
+        .data-table tr:nth-child(even) td { background: #f8fafc; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .callout { background: linear-gradient(135deg, rgba(197,160,89,0.08), rgba(197,160,89,0.02)); border: 1px solid rgba(197,160,89,0.35); border-left: 5px solid var(--accent-gold); border-radius: 8px; padding: 22px 26px; margin: 20px 0 32px; font-size: 1.02rem; color: var(--text-dark); }
+        .callout strong { color: var(--bg-primary); }
+        .finding-list { display: flex; flex-direction: column; gap: 16px; margin: 22px 0 32px; }
+        .finding-item { background: #fff; border: 1px solid var(--border-color); border-radius: 8px; padding: 20px 24px; display: flex; gap: 16px; align-items: flex-start; transition: all 0.25s ease; }
+        .finding-item:hover { border-color: var(--accent-gold); box-shadow: var(--shadow-sm); }
+        .finding-item i { color: var(--accent-gold); font-size: 1.3rem; margin-top: 3px; flex-shrink: 0; }
+        .finding-item p { margin-bottom: 0; }
+        .mid-cta { background: var(--bg-primary); color: #fff; border-radius: 12px; padding: 32px 30px; margin: 40px 0; border: 1px solid rgba(197, 160, 89, 0.3); display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .mid-cta h4 { color: #fff; font-size: 1.2rem; margin-bottom: 6px; }
+        .mid-cta p { color: #94a3b8; margin-bottom: 0; font-size: 0.9rem; }
+        .practical-list { list-style: none; margin: 20px 0 32px; }
+        .practical-list li { display: flex; gap: 12px; margin-bottom: 14px; font-size: 0.98rem; color: var(--text-dark); align-items: flex-start; }
+        .practical-list i { color: var(--success-color); margin-top: 4px; flex-shrink: 0; }
+        .disclaimer-note { font-size: 0.85rem; color: var(--text-muted); font-style: italic; border-top: 1px solid var(--border-color); padding-top: 20px; margin-top: 36px; }
+        .faq-section { margin-top: 54px; }
+        .faq-section > h2 { font-size: 1.55rem; color: var(--bg-primary); margin-bottom: 22px; }
+        .faq-item { border: 1px solid var(--border-color); border-radius: 8px; padding: 20px 24px; margin-bottom: 14px; }
+        .faq-item h3 { font-family: var(--font-body); font-size: 1.02rem; color: var(--bg-primary); margin-bottom: 8px; display: flex; gap: 10px; align-items: flex-start; font-weight: 700; }
+        .faq-item h3 i { color: var(--accent-gold); margin-top: 4px; flex-shrink: 0; }
+        .faq-item p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 0; padding-left: 26px; }
+        .share-bar { display: flex; gap: 12px; align-items: center; margin: 44px 0; padding: 22px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); flex-wrap: wrap; }
+        .share-bar span { font-size: 0.82rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .share-btn { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-color); font-size: 1rem; }
+        .share-btn:hover { background: var(--accent-gold); color: #fff; border-color: var(--accent-gold); }
+        .author-box { display: flex; gap: 22px; align-items: center; background: var(--bg-light); border: 1px solid var(--border-color); border-radius: 12px; padding: 26px; margin-top: 8px; }
+        .author-box img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: top center; border: 2px solid var(--accent-gold); flex-shrink: 0; }
+        .author-box h4 { font-size: 1.1rem; color: var(--bg-primary); margin-bottom: 4px; }
+        .author-box .author-role { color: var(--accent-gold); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 8px; letter-spacing: 0.4px; }
+        .author-box p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0; }
+        .article-final-cta { background: var(--bg-primary); color: #fff; padding: 70px 0; text-align: center; margin-top: 10px; }
+        .article-final-cta h2 { color: #fff; font-size: 2rem; margin-bottom: 16px; }
+        .article-final-cta p { color: #94a3b8; max-width: 620px; margin: 0 auto 32px; font-size: 1.02rem; }
+        .final-cta-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+        footer { background-color: #090d16; color: #64748b; padding: 40px 0 20px; border-top: 1px solid #1e293b; font-size: 0.85rem; text-align: center; }
+        footer p { margin-bottom: 10px; }
+        footer a { color: var(--accent-gold); }
+        .whatsapp-float { position: fixed; bottom: 24px; right: 24px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: var(--shadow-lg); z-index: 9999; transition: transform 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        @media (max-width: 992px) { .article-hero h1 { font-size: 1.9rem; } }
+        @media (max-width: 768px) { nav ul { display: none; } .article-hero h1 { font-size: 1.6rem; } .mid-cta, .author-box { flex-direction: column; text-align: center; } .author-box img { margin: 0 auto; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="../../index.html" class="logo-container">
+                <picture>
+                    <source srcset="../../img/LogoLS.webp" type="image/webp">
+                    <img src="../../img/LogoLS.png" alt="Dr. Lincoln Sposito - Perícia Judicial e Assistência Técnica" width="123" height="60">
+                </picture>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html#severidade">Diagnóstico BR</a></li>
+                    <li><a href="../../index.html#crossborder">US Market</a></li>
+                    <li><a href="../../index.html#latam">América Latina</a></li>
+                    <li><a href="../../index.html#global">Global / Arbitragem</a></li>
+                    <li><a href="../../index.html#artigos">Artigos</a></li>
+                    <li><a href="../../index.html#autoridade">O Perito</a></li>
+                </ul>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <div class="lang-selector" role="navigation" aria-label="Selecionar idioma do artigo">
+                    <a href="index.html" class="active" title="Português (Brasil)">PT</a>
+                    <span>|</span>
+                    <a href="en/index.html" title="English">EN</a>
+                    <span>|</span>
+                    <a href="es/index.html" title="Español">ES</a>
+                </div>
+                <a href="../../index.html#contato" class="btn btn-gold" style="padding: 10px 18px; font-size: 0.8rem;">Falar com Perito</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="article-hero">
+        <div class="container">
+            <p class="breadcrumb">
+                <a href="../../index.html">Início</a><span class="sep">/</span><a href="../../index.html#artigos">Artigos</a><span class="sep">/</span>Erro de Alíquota PF/PJ
+            </p>
+            <span class="badge-hero">Série: Patologias em Crédito PME</span>
+            <h1>Erro de Alíquota PF em Vez de PJ: o Erro que se Repete em CCBs</h1>
+            <div class="article-meta">
+                <div class="meta-author">
+                    <img src="../../img/dr-lincoln-sposito.jpg" alt="Dr. Lincoln Sposito">
+                    <span>Por <strong>Dr. Lincoln Sposito</strong>, Perito Financeiro</span>
+                </div>
+                <span><i class="far fa-calendar"></i> 14 de setembro de 2026</span>
+                <span><i class="far fa-clock"></i> 6 min de leitura</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="article-wrap">
+        <div class="container">
+            <article class="article-content">
+
+                <p class="lead">No artigo anterior desta série, tratamos do IOF como um imposto opaco, cujo erro de cálculo se propaga silenciosamente ao longo de um contrato de crédito, sob a forma de juros compostos sobre uma base inflada. Neste artigo, aprofundamos um erro específico, dentro dessa categoria, que a perícia técnica encontrou de forma praticamente idêntica em mais de um contrato analisado: a aplicação, em uma operação de crédito para pessoa jurídica, da alíquota de IOF prevista para operações de <strong>pessoa física</strong>.</p>
+
+                <p>Parece um detalhe técnico menor. Não é. A diferença entre as alíquotas aplicáveis a pessoa física e a pessoa jurídica em operações de crédito, conforme o Decreto nº 6.306/2007, pode gerar uma distorção relevante no valor do imposto devido — e, como o IOF costuma ser financiado dentro do principal da operação, esse excesso passa a compor a base sobre a qual incidem os juros contratuais ao longo de todo o prazo do financiamento.</p>
+
+                <div class="toc-box">
+                    <h4><i class="fas fa-list-ul"></i> Nesta análise</h4>
+                    <ol>
+                        <li><a href="#caso">O caso: CCB de R$ 1,15 milhão com garantia imobiliária</a></li>
+                        <li><a href="#repete">Por que esse erro específico se repete</a></li>
+                        <li><a href="#cascata">O efeito cascata: do imposto ao capital</a></li>
+                        <li><a href="#verificar">Como verificar se sua empresa foi afetada</a></li>
+                        <li><a href="#faq">Perguntas frequentes</a></li>
+                    </ol>
+                </div>
+
+                <h2 id="caso">O caso: CCB de R$ 1,15 milhão com garantia imobiliária</h2>
+                <p>Em um dos pareceres técnicos que fundamentam esta análise — envolvendo uma CCB com alienação fiduciária de imóvel residencial, contratada junto à BMP Sociedade de Crédito Direto, com valor bruto de aproximadamente R$ 1,15 milhão e custo nominal total contratado em torno de R$ 1,96 milhão —, a perícia identificou que o cálculo do IOF da operação havia sido realizado com a alíquota de pessoa física, quando a operação, evidentemente, era de titularidade de pessoa jurídica.</p>
+
+                <div class="callout">
+                    O mesmo padrão de erro, no mesmo contrato, se somava a outras patologias: uma estrutura de amortização que a perícia descreveu como <strong>"Price disfarçada de SAC"</strong>, cobrança de juros sobre um hiato entre a emissão do título e a liberação efetiva dos recursos ("capital morto"), e uma taxa nominal cerca de <strong>três vezes superior à média de mercado</strong>, apesar de a operação contar com garantia real cobrindo cerca de 50% do valor do capital. Combinados, esses fatores levaram a perícia a recalcular o custo total da operação com uma redução de aproximadamente <strong>31,6% (cerca de R$ 619 mil)</strong> e um CET revisado de cerca de 22% ao ano, frente a um CET efetivo entre 81% e 100% ao ano no modelo apresentado pelo credor.
+                </div>
+
+                <div class="mid-cta">
+                    <div>
+                        <h4>Sua CCB pode ter esse mesmo erro de alíquota?</h4>
+                        <p>Solicite uma triagem técnica do memorial de cálculo do IOF do seu contrato.</p>
+                    </div>
+                    <a href="https://wa.me/5511914612603?text=Vim%20do%20artigo%20sobre%20erro%20de%20al%C3%ADquota%20PF%2FPJ%20no%20IOF%20e%20quero%20uma%20triagem%20t%C3%A9cnica%20do%20meu%20contrato." class="btn btn-gold" target="_blank" onclick="gtag('event', 'click_whatsapp', {'event_category': 'Lead', 'event_label': 'Artigo Aliquota PF PJ - CTA Meio'});"><i class="fab fa-whatsapp"></i> Solicitar Triagem</a>
+                </div>
+
+                <h2 id="repete">Por que esse erro específico se repete</h2>
+                <p>A recorrência desse erro em diferentes contratos não parece coincidência estatística isolada — sugere um problema de parametrização em sistemas de originação de crédito. Bancos e instituições financeiras de crédito direto operam, na prática, com sistemas que processam simultaneamente operações de crédito para pessoa física (financiamento de veículo, crédito consignado, cartão de crédito) e para pessoa jurídica (capital de giro, CCB, conta garantida). Se o cadastro da operação não capturar corretamente a natureza jurídica do tomador — ou se um template de cálculo configurado originalmente para pessoa física for reaproveitado, por erro operacional, em uma operação PJ —, o resultado é a aplicação sistemática da alíquota errada, sem que isso seja percebido nem pelo operador que estrutura o contrato, nem pelo cliente que o assina.</p>
+                <p>Do ponto de vista de quem contrata, esse tipo de erro tem uma característica agravante: é praticamente indetectável sem análise técnica especializada. O valor do IOF aparece no contrato como uma cifra fechada — não como uma fórmula aberta que permita ao tomador verificar, ele mesmo, qual alíquota foi aplicada. Só uma reconstituição do cálculo, com base na legislação vigente na data da contratação, revela a inconsistência.</p>
+
+                <h2 id="cascata">O efeito cascata: do imposto ao capital</h2>
+                <p>O ponto mais relevante, do ponto de vista técnico, não é o valor isolado do excesso de IOF — é o que a perícia chama de <strong>excesso incorporado ao capital</strong>. Quando o IOF (já calculado com a alíquota errada, portanto inflado) é financiado dentro do principal da CCB, o valor de face do título passa a incluir esse excesso como se fosse capital genuinamente emprestado. A partir daí, o excesso deixa de ser "só um erro de imposto" e passa a gerar juros compostos, ao longo de toda a vida do contrato, sobre uma base artificialmente maior do que deveria ser.</p>
+                <p>Esse mecanismo — imposto calculado errado, financiado no principal, gerando juros sobre juros ao longo de anos — é, na prática pericial, uma das formas mais silenciosas e menos questionadas de inflação de dívida em operações de crédito PJ, precisamente porque exige duas camadas de verificação técnica (a correção da alíquota tributária e o recálculo do fluxo de amortização) para ser corretamente identificado e quantificado.</p>
+
+                <h2 id="verificar">Como verificar se sua empresa foi afetada</h2>
+                <p>Para uma CCB ou operação de crédito PJ já contratada, vale a pena verificar, no memorial de cálculo do IOF fornecido pelo banco (ou solicitado formalmente, caso não tenha sido disponibilizado de forma clara):</p>
+
+                <ul class="practical-list">
+                    <li><i class="fas fa-check-circle"></i> Qual alíquota diária e qual alíquota adicional foram efetivamente aplicadas.</li>
+                    <li><i class="fas fa-check-circle"></i> Se essas alíquotas correspondem às tabelas vigentes para pessoa jurídica na data da contratação.</li>
+                    <li><i class="fas fa-check-circle"></i> Se o valor do IOF foi financiado dentro do principal.</li>
+                    <li><i class="fas fa-check-circle"></i> Se, em caso positivo, o fluxo de amortização completo foi recalculado com o valor correto do imposto como base.</li>
+                </ul>
+
+                <p>A diferença, como demonstram os casos revisados, raramente é pequena — pode representar uma fração relevante do custo total da operação, acumulada silenciosamente ao longo de todo o prazo do contrato.</p>
+
+                <p class="disclaimer-note">Este artigo integra uma série sobre patologias técnicas em operações de crédito empresarial, com base em pareceres periciais elaborados pelo autor. Casos individuais são tratados de forma agregada e anonimizada, sem identificação de empresas ou pessoas físicas envolvidas.</p>
+
+                <div class="faq-section" id="faq">
+                    <h2>Perguntas frequentes</h2>
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> Por que a alíquota de IOF para pessoa jurídica é diferente da de pessoa física?</h3>
+                        <p>O Decreto nº 6.306/2007 estabelece alíquotas distintas para operações de crédito de pessoa física e de pessoa jurídica. Quando o sistema do banco aplica a alíquota errada, o valor do imposto calculado diverge do que seria devido pela natureza real da operação.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> Por que esse erro é difícil de perceber pelo tomador?</h3>
+                        <p>Porque o IOF aparece no contrato como um valor consolidado, sem discriminação da alíquota aplicada. Só a reconstituição técnica do cálculo, com base na legislação vigente na data da contratação, revela qual alíquota foi efetivamente usada.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> O que acontece quando o IOF calculado errado é financiado dentro do principal?</h3>
+                        <p>O excesso de imposto passa a compor o valor de face do título como se fosse capital genuinamente emprestado, gerando juros compostos sobre uma base artificialmente maior ao longo de toda a vida do contrato.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> Como verificar se minha empresa foi afetada por esse erro?</h3>
+                        <p>Solicite ao banco o memorial de cálculo do IOF e confira se a alíquota diária e a alíquota adicional aplicadas correspondem às tabelas vigentes para pessoa jurídica na data da contratação, e não às tabelas de pessoa física.</p>
+                    </div>
+                </div>
+
+                <div class="share-bar">
+                    <span>Compartilhar</span>
+                    <a class="share-btn" target="_blank" rel="noopener" aria-label="Compartilhar no WhatsApp" href="https://wa.me/?text=Erro%20de%20Al%C3%ADquota%20PF%20em%20Vez%20de%20PJ%3A%20https%3A%2F%2Fspositol.github.io%2Fblog%2Ferro-aliquota-pf-pj%2F"><i class="fab fa-whatsapp"></i></a>
+                    <a class="share-btn" target="_blank" rel="noopener" aria-label="Compartilhar no LinkedIn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fspositol.github.io%2Fblog%2Ferro-aliquota-pf-pj%2F"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="share-btn" aria-label="Copiar link" href="https://spositol.github.io/blog/erro-aliquota-pf-pj/" onclick="navigator.clipboard.writeText(this.href); alert('Link copiado!'); return false;"><i class="fas fa-link"></i></a>
+                </div>
+
+                <div class="author-box">
+                    <img src="../../img/dr-lincoln-sposito.jpg" alt="Dr. Lincoln Sposito">
+                    <div>
+                        <h4>Dr. Lincoln Sposito</h4>
+                        <span class="author-role">Doutor em Administração | Perito Judicial | Data Science (MIT)</span>
+                        <p>Especialista em auditoria bancária e perícia financeira, une o rigor estatístico da Ciência de Dados com a análise de arquiteturas de sistemas bancários para desarmar cobranças predatórias contra PMEs. <a href="../../index.html#autoridade" class="text-gold" style="font-weight:600;">Conheça o perito →</a></p>
+                    </div>
+                </div>
+
+            </article>
+        </div>
+    </section>
+
+    <section class="article-final-cta">
+        <div class="container">
+            <h2>Solicite um Diagnóstico Pericial do Seu Contrato</h2>
+            <p>Antes de assinar — ou depois de assinado — audite seu contrato de crédito empresarial com metodologia pericial científica.</p>
+            <div class="final-cta-buttons">
+                <a href="https://wa.me/5511914612603?text=Vim%20do%20artigo%20sobre%20erro%20de%20al%C3%ADquota%20PF%2FPJ%20no%20IOF%20e%20quero%20falar%20com%20o%20perito." class="btn btn-danger" target="_blank" onclick="gtag('event', 'click_whatsapp', {'event_category': 'Lead', 'event_label': 'Artigo Aliquota PF PJ - CTA Final'});"><i class="fab fa-whatsapp"></i> Falar com o Perito Agora</a>
+                <a href="../../index.html#contato" class="btn btn-outline-light" style="border-color: #fff; color: #fff;"><i class="fas fa-file-signature"></i> Formulário Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dr. Lincoln Sposito — Perícia Judicial e Assistência Técnica. Todos os direitos reservados.</p>
+            <p>Atuação em conformidade técnica e científica. Este site possui caráter informativo e estritamente profissional.</p>
+            <p style="margin-top: 15px; font-size: 0.8rem;">
+                Repositório Institucional & Portal de Casos:
+                <a href="https://spositol.github.io/pericia.judicial/index.html" target="_blank" rel="noopener">Sposito Perícia Judicial</a>
+            </p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511914612603?text=Ol%C3%A1%20Dr.%20Lincoln,%20gostaria%20de%20falar%20sobre%20uma%20per%C3%ADcia%20para%20minha%20empresa."
+       class="whatsapp-float btn btn-danger"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Falar com Dr. Lincoln no WhatsApp"
+       onclick="gtag('event', 'click_whatsapp', {'event_category': 'Lead', 'event_label': 'Artigo Aliquota PF PJ - Float'});">
+    <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>

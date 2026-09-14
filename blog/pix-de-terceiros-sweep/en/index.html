@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+	<!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5F1FGJ25TK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5F1FGJ25TK');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mistake of Letting the Bank "Sweep" Third-Party Payments From Your Account | Dr. Lincoln Sposito</title>
+    <meta name="description" content="How a bank's account-sweep algorithm captures instant payments and wire transfers from third parties before the company can use them to pay its own bills, and why this can trigger cascading defaults and cross-default clauses.">
+    <link rel="canonical" href="https://spositol.github.io/blog/pix-de-terceiros-sweep/en/">
+
+    <!-- Hreflang: article versions -->
+    <link rel="alternate" hreflang="pt-BR" href="https://spositol.github.io/blog/pix-de-terceiros-sweep/">
+    <link rel="alternate" hreflang="en" href="https://spositol.github.io/blog/pix-de-terceiros-sweep/en/">
+    <link rel="alternate" hreflang="es" href="https://spositol.github.io/blog/pix-de-terceiros-sweep/es/">
+    <link rel="alternate" hreflang="x-default" href="https://spositol.github.io/blog/pix-de-terceiros-sweep/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../img/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../img/apple-touch-icon.png">
+
+    <!-- Open Graph / Twitter Card -->
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Dr. Lincoln Sposito - Financial Forensics">
+    <meta property="og:url" content="https://spositol.github.io/blog/pix-de-terceiros-sweep/en/">
+    <meta property="og:title" content="The Mistake of Letting the Bank 'Sweep' Third-Party Payments From Your Account">
+    <meta property="og:description" content="How a bank's account-sweep algorithm captures instant payments and wire transfers from third parties before the company can use them to pay its own bills.">
+    <meta property="og:image" content="https://spositol.github.io/img/dr-lincoln-sposito.jpg">
+    <meta property="article:published_time" content="2026-09-14">
+    <meta property="article:modified_time" content="2026-09-14">
+    <meta property="article:author" content="Lincoln Sposito">
+    <meta property="article:section" content="Banking Forensics">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Mistake of Letting the Bank 'Sweep' Third-Party Payments From Your Account">
+    <meta name="twitter:description" content="How a bank's account-sweep algorithm captures third-party payments before the company can use them.">
+    <meta name="twitter:image" content="https://spositol.github.io/img/dr-lincoln-sposito.jpg">
+
+    <!-- JSON-LD: Breadcrumb + Article + FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://spositol.github.io/us-cross-border/" },
+            { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://spositol.github.io/#artigos" },
+            { "@type": "ListItem", "position": 3, "name": "Third-Party Payments and Bank Account Sweeps", "item": "https://spositol.github.io/blog/pix-de-terceiros-sweep/en/" }
+          ]
+        },
+        {
+          "@type": "Article",
+          "@id": "https://spositol.github.io/blog/pix-de-terceiros-sweep/en/#article",
+          "headline": "The Mistake of Letting the Bank 'Sweep' Third-Party Payments From Your Account Before You Pay Your Own Bills",
+          "description": "How a bank's account-sweep algorithm captures instant payments and wire transfers from third parties before the company can use them to pay its own bills, and why this can trigger cascading defaults and cross-default clauses.",
+          "image": "https://spositol.github.io/img/dr-lincoln-sposito.jpg",
+          "author": { "@type": "Person", "name": "Lincoln Sposito", "url": "https://spositol.github.io/#person", "jobTitle": "Financial Expert Witness" },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Dr. Lincoln Sposito - Financial Forensics",
+            "logo": { "@type": "ImageObject", "url": "https://spositol.github.io/img/LogoLS.png" }
+          },
+          "datePublished": "2026-09-14",
+          "dateModified": "2026-09-14",
+          "mainEntityOfPage": "https://spositol.github.io/blog/pix-de-terceiros-sweep/en/",
+          "inLanguage": "en",
+          "articleSection": "Banking Forensics",
+          "keywords": "bank account sweep, checking account sweep, third-party PIX payments, CCB, cross-default, Brazil SME banking forensics"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a checking-account \"sweep\" in banking contracts?",
+              "acceptedAnswer": { "@type": "Answer", "text": "It's a banking system programmed to capture, in real time, any amount entering the account tied to a credit operation — including instant payments (PIX) and wire transfers received from third parties — and automatically apply it to reduce the outstanding balance, often before the account holder can use that money for any other purpose." }
+            },
+            {
+              "@type": "Question",
+              "name": "Can a bank sweep capture payments received from the company's own customers even when installments are current?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes. In audited cases, capture happened systematically and preemptively, with no installment past due at the time — the system treated any cash inflow as collateral reinforcement, regardless of whether the contract was in good standing." }
+            },
+            {
+              "@type": "Question",
+              "name": "Can this cash capture trigger cross-default from delays on other company obligations?",
+              "acceptedAnswer": { "@type": "Answer", "text": "It can. If the funds that would have paid a supplier, payroll or a tax bill are intercepted by the bank, the company starts falling behind on obligations it would normally honor. In contracts with a cross-default clause, that delay — caused by the lender's own conduct — can trigger acceleration of the entire debt." }
+            },
+            {
+              "@type": "Question",
+              "name": "How does a financial forensic audit prove the existence of a sweep algorithm?",
+              "acceptedAnswer": { "@type": "Answer", "text": "By reconstructing, statement by statement, the exact timeline of each incoming payment and the interval before the subsequent debit, the origin of the captured funds, whether an installment was past due at the time of capture, and whether the contract described the mechanism clearly enough to constitute informed consent." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-darker: #020617;
+            --bg-light: #f8fafc;
+            --accent-gold: #c5a059;
+            --accent-gold-hover: #b38e46;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --text-light: #f8fafc;
+            --border-color: #e2e8f0;
+            --danger-color: #dc2626;
+            --warning-color: #d97706;
+            --success-color: #16a34a;
+            --font-title: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 30px -10px rgba(0, 0, 0, 0.2);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); color: var(--text-dark); background-color: #ffffff; line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: var(--font-title); line-height: 1.2; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-gold { color: var(--accent-gold); }
+
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; font-weight: 600; font-size: 0.95rem; border-radius: 6px; cursor: pointer; border: none; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn-gold { background-color: var(--accent-gold); color: #ffffff; }
+        .btn-gold:hover { background-color: var(--accent-gold-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .btn-outline-light { border: 2px solid var(--accent-gold); color: var(--accent-gold); background: transparent; }
+        .btn-outline-light:hover { background-color: var(--accent-gold); color: #ffffff; }
+        .btn-danger { background-color: var(--danger-color); color: white; }
+        .btn-danger:hover { background-color: #b91c1c; transform: translateY(-2px); }
+
+        header { background-color: var(--bg-primary); border-bottom: 1px solid rgba(197, 160, 89, 0.2); position: sticky; top: 0; z-index: 1000; padding: 12px 0; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .logo-container img { height: 60px; width: auto; display: block; }
+        nav ul { display: flex; list-style: none; gap: 16px; align-items: center; }
+        nav a { color: var(--text-light); font-size: 0.82rem; font-weight: 500; }
+        nav a:hover { color: var(--accent-gold); }
+        .lang-selector { display: flex; gap: 8px; font-size: 0.8rem; background: var(--bg-secondary); padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.3); }
+        .lang-selector a { color: #94a3b8; font-weight: 600; }
+        .lang-selector a.active { color: var(--accent-gold); }
+
+        .breadcrumb { font-size: 0.8rem; color: #94a3b8; margin-bottom: 18px; }
+        .breadcrumb a { color: #94a3b8; }
+        .breadcrumb a:hover { color: var(--accent-gold); }
+        .breadcrumb .sep { margin: 0 8px; color: #475569; }
+
+        .article-hero { background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%); color: white; padding: 50px 0 60px; position: relative; overflow: hidden; }
+        .article-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 15% 20%, rgba(197, 160, 89, 0.15), transparent 60%); }
+        .article-hero .container { position: relative; z-index: 2; }
+        .badge-hero { display: inline-block; background: rgba(197, 160, 89, 0.15); color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 6px 16px; border-radius: 30px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px; }
+        .article-hero h1 { font-size: 2.05rem; font-weight: 700; margin-bottom: 20px; color: #ffffff; max-width: 880px; }
+        .article-meta { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; color: #94a3b8; font-size: 0.88rem; }
+        .article-meta .meta-author { display: flex; align-items: center; gap: 10px; }
+        .article-meta img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-gold); }
+        .article-meta strong { color: #e2e8f0; }
+
+        .article-wrap { padding: 60px 0 30px; }
+        .article-content { max-width: 760px; margin: 0 auto; }
+        .lead { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.7; }
+        .article-content h2 { font-size: 1.5rem; color: var(--bg-primary); margin: 46px 0 18px; padding-bottom: 10px; border-bottom: 2px solid var(--border-color); position: relative; }
+        .article-content h2::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 60px; height: 2px; background: var(--accent-gold); }
+        .article-content p { color: #334155; margin-bottom: 18px; font-size: 1.02rem; line-height: 1.78; }
+        .article-content strong { color: var(--bg-primary); }
+        .article-content em { color: var(--text-muted); }
+
+        .toc-box { background: var(--bg-light); border: 1px solid var(--border-color); border-left: 4px solid var(--accent-gold); border-radius: 8px; padding: 22px 26px; margin-bottom: 38px; }
+        .toc-box h4 { font-family: var(--font-body); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--accent-gold); margin-bottom: 12px; font-weight: 700; }
+        .toc-box ol { padding-left: 20px; }
+        .toc-box li { margin-bottom: 8px; font-size: 0.92rem; }
+        .toc-box a { color: var(--text-dark); font-weight: 500; }
+        .toc-box a:hover { color: var(--accent-gold); }
+
+        .table-wrap { overflow-x: auto; margin: 24px 0 12px; border-radius: 8px; box-shadow: var(--shadow-sm); }
+        .data-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+        .data-table th { background: var(--bg-primary); color: var(--accent-gold); text-align: left; padding: 12px 16px; font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-dark); }
+        .data-table tr:nth-child(even) td { background: #f8fafc; }
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .callout { background: linear-gradient(135deg, rgba(197,160,89,0.08), rgba(197,160,89,0.02)); border: 1px solid rgba(197,160,89,0.35); border-left: 5px solid var(--accent-gold); border-radius: 8px; padding: 22px 26px; margin: 20px 0 32px; font-size: 1.02rem; color: var(--text-dark); }
+        .callout strong { color: var(--bg-primary); }
+
+        .finding-list { display: flex; flex-direction: column; gap: 16px; margin: 22px 0 32px; }
+        .finding-item { background: #fff; border: 1px solid var(--border-color); border-radius: 8px; padding: 20px 24px; display: flex; gap: 16px; align-items: flex-start; transition: all 0.25s ease; }
+        .finding-item:hover { border-color: var(--accent-gold); box-shadow: var(--shadow-sm); }
+        .finding-item i { color: var(--accent-gold); font-size: 1.3rem; margin-top: 3px; flex-shrink: 0; }
+        .finding-item p { margin-bottom: 0; }
+
+        .mid-cta { background: var(--bg-primary); color: #fff; border-radius: 12px; padding: 32px 30px; margin: 40px 0; border: 1px solid rgba(197, 160, 89, 0.3); display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .mid-cta h4 { color: #fff; font-size: 1.2rem; margin-bottom: 6px; }
+        .mid-cta p { color: #94a3b8; margin-bottom: 0; font-size: 0.9rem; }
+
+        .practical-list { list-style: none; margin: 20px 0 32px; }
+        .practical-list li { display: flex; gap: 12px; margin-bottom: 14px; font-size: 0.98rem; color: var(--text-dark); align-items: flex-start; }
+        .practical-list i { color: var(--success-color); margin-top: 4px; flex-shrink: 0; }
+
+        .disclaimer-note { font-size: 0.85rem; color: var(--text-muted); font-style: italic; border-top: 1px solid var(--border-color); padding-top: 20px; margin-top: 36px; }
+
+        .faq-section { margin-top: 54px; }
+        .faq-section > h2 { font-size: 1.5rem; color: var(--bg-primary); margin-bottom: 22px; }
+        .faq-item { border: 1px solid var(--border-color); border-radius: 8px; padding: 20px 24px; margin-bottom: 14px; }
+        .faq-item h3 { font-family: var(--font-body); font-size: 1.02rem; color: var(--bg-primary); margin-bottom: 8px; display: flex; gap: 10px; align-items: flex-start; font-weight: 700; }
+        .faq-item h3 i { color: var(--accent-gold); margin-top: 4px; flex-shrink: 0; }
+        .faq-item p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 0; padding-left: 26px; }
+
+        .share-bar { display: flex; gap: 12px; align-items: center; margin: 44px 0; padding: 22px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); flex-wrap: wrap; }
+        .share-bar span { font-size: 0.82rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .share-btn { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-color); font-size: 1rem; }
+        .share-btn:hover { background: var(--accent-gold); color: #fff; border-color: var(--accent-gold); }
+
+        .author-box { display: flex; gap: 22px; align-items: center; background: var(--bg-light); border: 1px solid var(--border-color); border-radius: 12px; padding: 26px; margin-top: 8px; }
+        .author-box img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: top center; border: 2px solid var(--accent-gold); flex-shrink: 0; }
+        .author-box h4 { font-size: 1.1rem; color: var(--bg-primary); margin-bottom: 4px; }
+        .author-box .author-role { color: var(--accent-gold); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 8px; letter-spacing: 0.4px; }
+        .author-box p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0; }
+
+        .article-final-cta { background: var(--bg-primary); color: #fff; padding: 70px 0; text-align: center; margin-top: 10px; }
+        .article-final-cta h2 { color: #fff; font-size: 2rem; margin-bottom: 16px; }
+        .article-final-cta p { color: #94a3b8; max-width: 620px; margin: 0 auto 32px; font-size: 1.02rem; }
+        .final-cta-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+        footer { background-color: #090d16; color: #64748b; padding: 40px 0 20px; border-top: 1px solid #1e293b; font-size: 0.85rem; text-align: center; }
+        footer p { margin-bottom: 10px; }
+        footer a { color: var(--accent-gold); }
+        .whatsapp-float { position: fixed; bottom: 24px; right: 24px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: var(--shadow-lg); z-index: 9999; transition: transform 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        @media (max-width: 992px) {
+            .article-hero h1 { font-size: 1.7rem; }
+        }
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .article-hero h1 { font-size: 1.45rem; }
+            .mid-cta, .author-box { flex-direction: column; text-align: center; }
+            .author-box img { margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER & NAVBAR -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="../../../us-cross-border/index.html" class="logo-container">
+                <picture>
+                    <source srcset="../../../img/LogoLS.webp" type="image/webp">
+                    <img src="../../../img/LogoLS.png" alt="Dr. Lincoln Sposito - Judicial Expert & Technical Assistant" width="123" height="60">
+                </picture>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="../../../us-cross-border/index.html#fx-trade">FX & Trade</a></li>
+                    <li><a href="../../../us-cross-border/index.html#authority">Expert Witness</a></li>
+                    <li><a href="../../../index.html#artigos">Articles</a></li>
+                </ul>
+            </nav>
+
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <div class="lang-selector" role="navigation" aria-label="Select article language">
+                    <a href="../index.html" title="Português (Brasil)">PT</a>
+                    <span>|</span>
+                    <a href="index.html" class="active" title="English">EN</a>
+                    <span>|</span>
+                    <a href="../es/index.html" title="Español">ES</a>
+                </div>
+                <a href="../../../us-cross-border/index.html#contact" class="btn btn-gold" style="padding: 10px 18px; font-size: 0.8rem;">Talk to the Expert</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ARTICLE HERO -->
+    <section class="article-hero">
+        <div class="container">
+            <p class="breadcrumb">
+                <a href="../../../us-cross-border/index.html">Home</a><span class="sep">/</span><a href="../../../index.html#artigos">Articles</a><span class="sep">/</span>Third-Party Payments and Bank Sweeps
+            </p>
+            <span class="badge-hero">Series: Pathologies in SME Credit</span>
+            <h1>The Mistake of Letting the Bank "Sweep" Third-Party Payments From Your Account Before You Pay Your Own Bills</h1>
+            <div class="article-meta">
+                <div class="meta-author">
+                    <img src="../../../img/dr-lincoln-sposito.jpg" alt="Dr. Lincoln Sposito">
+                    <span>By <strong>Dr. Lincoln Sposito</strong>, Financial Expert Witness</span>
+                </div>
+                <span><i class="far fa-calendar"></i> September 14, 2026</span>
+                <span><i class="far fa-clock"></i> 5 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTICLE BODY -->
+    <section class="article-wrap">
+        <div class="container">
+            <article class="article-content">
+
+                <p class="lead">There's an important technical difference between "automatic debit of the installment on its due date" and what, in expert opinions, has come to be called a checking-account <strong>sweep algorithm</strong>. The first is predictable. The second captures, in real time, any amount entering the account tied to the credit facility — including instant payments (PIX) and wire transfers from third parties who have nothing to do with the debt — before the company can even use that money for any other purpose.</p>
+
+                <div class="toc-box">
+                    <h4><i class="fas fa-list-ul"></i> In this article</h4>
+                    <ol>
+                        <li><a href="#hidden-mechanism">The mechanism nobody explains at the branch</a></li>
+                        <li><a href="#how-it-works">How the sweep works, in practice</a></li>
+                        <li><a href="#why-serious">Why "third-party payment" is the most serious part</a></li>
+                        <li><a href="#what-forensics-review">What a forensic audit reviews</a></li>
+                        <li><a href="#legal-grounds">The legal grounds involved</a></li>
+                        <li><a href="#what-to-do">What to do</a></li>
+                        <li><a href="#faq">Frequently asked questions</a></li>
+                    </ol>
+                </div>
+
+                <h2 id="hidden-mechanism">The mechanism nobody explains at the branch</h2>
+                <p>This mechanism has shown up, with variations, in more than a third of the technical opinions I've prepared over the past several months — in working-capital operations backed by public credit-support programs (FGI-PEAC) and also in CCBs with real collateral. It's worth explaining, step by step, how it works and why it's far more serious than it looks at first glance.</p>
+
+                <h2 id="how-it-works">How the sweep works, in practice</h2>
+                <p>The mechanism follows a technical sequence that repeats, case after case:</p>
+
+                <div class="finding-list">
+                    <div class="finding-item">
+                        <i class="fas fa-right-left"></i>
+                        <p><strong>The company receives an instant payment from a customer</strong> — payment for a sale, a service rendered, of any nature — into the checking account that was, at some point, designated as the operating account tied to the credit contract.</p>
+                    </div>
+                    <div class="finding-item">
+                        <i class="fas fa-magnifying-glass-dollar"></i>
+                        <p><strong>Within seconds, the bank's system identifies the incoming funds</strong> and applies a pre-configured capture rule, with no prior notice to the account holder.</p>
+                    </div>
+                    <div class="finding-item">
+                        <i class="fas fa-arrow-down"></i>
+                        <p><strong>The amount is debited and applied to reduce the outstanding balance</strong> — not necessarily the month's due installment, but, in some models observed, as a reduction of the total balance, affecting future interest calculations and, under certain contract designs, without even generating a clear, immediate receipt of the write-down for the client.</p>
+                    </div>
+                    <div class="finding-item">
+                        <i class="fas fa-eye-slash"></i>
+                        <p><strong>The money that came in is no longer visible or available</strong> for the company to pay a supplier, payroll, or a tax bill due that same day — even when that specific payment had no relation whatsoever to the credit operation.</p>
+                    </div>
+                </div>
+
+                <div class="callout">
+                    In one of the cases I audited — a <strong>CCB secured by a fiduciary lien on industrial machinery, worth roughly R$160,000</strong> — it was technically demonstrated that funds received from third parties via instant payment and wire transfer were systematically swept from the company's checking account, <strong>including while the client was strictly current on all contracted installments</strong>. There was no default to justify preemptive capture: there was, simply, a system configured to treat any cash inflow as collateral reinforcement.
+                </div>
+
+                <div class="mid-cta">
+                    <div>
+                        <h4>Is your operating account being swept by the bank?</h4>
+                        <p>Request a preliminary technical screening of your business credit contract.</p>
+                    </div>
+                    <a href="https://wa.me/5511914612603?text=I%20came%20from%20the%20third-party-payment-sweep%20article%20and%20want%20a%20technical%20screening%20of%20my%20contract." class="btn btn-gold" target="_blank" onclick="gtag('event', 'click_whatsapp', {'event_category': 'Lead', 'event_label': 'EN Article Pix Sweep - Mid CTA'});"><i class="fab fa-whatsapp"></i> Request Screening</a>
+                </div>
+
+                <h2 id="why-serious">Why "third-party payment" is the most serious part</h2>
+                <p>The distinction between capturing "the debtor's money" and capturing "a third party's incoming payment" isn't a legal subtlety — it's the core of the problem. When a company's customer pays an invoice via instant transfer, those funds have a destination: paying the company's supplier, paying an employee's salary, paying the month's tax bill. If the bank intercepts that flow before the company can redirect it to its operating obligations, the practical effect is this:</p>
+
+                <div class="finding-list">
+                    <div class="finding-item">
+                        <i class="fas fa-triangle-exclamation"></i>
+                        <p>The company starts falling behind on obligations it would normally honor — not because it lacks revenue, but because the revenue was captured by a third party — the bank — before reaching the hands of whoever should be managing it.</p>
+                    </div>
+                    <div class="finding-item">
+                        <i class="fas fa-link-slash"></i>
+                        <p>The delay caused by this capture can, in contracts with a cross-default clause, trigger acceleration of the entire banking debt — a domino effect in which the lender's own conduct creates the default it later uses to accelerate collection.</p>
+                    </div>
+                    <div class="finding-item">
+                        <i class="fas fa-chart-line"></i>
+                        <p>The company loses financial planning capacity, because it doesn't know, from one day to the next, how much of its cash will actually be available — which makes supplier negotiations, payroll compliance, and even basic tax planning unworkable.</p>
+                    </div>
+                </div>
+
+                <h2 id="what-forensics-review">What a forensic audit reviews</h2>
+                <p>When analyzing an operation showing signs of a sweep, the financial forensic audit seeks to reconstruct, statement by statement: the exact timeline of each incoming payment and the interval between the credit and the subsequent debit (in cases observed, that interval ranged from seconds to a few minutes); the origin of the captured funds — whether they came from the company's customers/third parties or from the partners' own capital contributions; whether an installment was past due at the time of capture, or whether it occurred preemptively, with the contract in good standing; and whether the contract expressly disclosed this mechanism clearly enough to constitute informed consent, or whether the clause was generic enough that the client couldn't reasonably foresee the practical reach of the authorization.</p>
+
+                <h2 id="legal-grounds">The legal grounds involved</h2>
+                <p>This type of mechanism directly strains civil and consumer-law doctrines: Article 884 of the Civil Code (prohibition of unjust enrichment), the duties of disclosure and good faith under Articles 421 and 422 of the Civil Code, and, where a consumer relationship applies, Article 51, IV, of the Consumer Protection Code (nullity of clauses that place the consumer at an excessive disadvantage). In contracts tied to public credit-support programs (Law 14.042/2020, Law 10.931/2004), there's an additional issue: diversion from the assistance purpose of the credit, since a mechanism of this kind hollows out the cash-flow relief the emergency program itself was meant to guarantee the company.</p>
+
+                <h2 id="what-to-do">What to do</h2>
+                <p>Working-capital credit exists to give a company operational breathing room. A mechanism that intercepts cash before it can even circulate does exactly the opposite — and, technically, turns a credit operation into a unilateral, silent control over the financial flow of third parties who aren't even party to the contract.</p>
+
+                <ul class="practical-list">
+                    <li><i class="fas fa-check-circle"></i> Read the "linked-account activity" clause carefully. If the language allows "debit of any amount received, at any time," question it and negotiate before signing.</li>
+                    <li><i class="fas fa-check-circle"></i> Avoid concentrating customer receipts in the same account tied to the credit facility, whenever the contract allows a different operating structure.</li>
+                    <li><i class="fas fa-check-circle"></i> Request detailed periodic statements for the captured account, and compare each debit against the contractual installment schedule.</li>
+                    <li><i class="fas fa-check-circle"></i> Document any delay to third parties (suppliers, taxes) that results directly from the bank's preemptive cash capture — this record is decisive in any eventual technical dispute.</li>
+                </ul>
+
+                <p class="disclaimer-note">This article is part of a series on technical pathologies in business credit operations, based on expert opinions prepared by the author. Individual cases are treated in aggregate and anonymized form, with no identification of the companies or individuals involved.</p>
+
+                <!-- FAQ -->
+                <div class="faq-section" id="faq">
+                    <h2>Frequently asked questions</h2>
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> What is a checking-account "sweep" in banking contracts?</h3>
+                        <p>It's a banking system programmed to capture, in real time, any amount entering the account tied to a credit operation — including instant payments (PIX) and wire transfers received from third parties — and automatically apply it to reduce the outstanding balance, often before the account holder can use that money for any other purpose.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> Can a bank sweep capture payments received from the company's own customers even when installments are current?</h3>
+                        <p>Yes. In audited cases, capture happened systematically and preemptively, with no installment past due at the time — the system treated any cash inflow as collateral reinforcement, regardless of whether the contract was in good standing.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> Can this cash capture trigger cross-default from delays on other company obligations?</h3>
+                        <p>It can. If the funds that would have paid a supplier, payroll or a tax bill are intercepted by the bank, the company starts falling behind on obligations it would normally honor. In contracts with a cross-default clause, that delay — caused by the lender's own conduct — can trigger acceleration of the entire debt.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> How does a financial forensic audit prove the existence of a sweep algorithm?</h3>
+                        <p>By reconstructing, statement by statement, the exact timeline of each incoming payment and the interval before the subsequent debit, the origin of the captured funds, whether an installment was past due at the time of capture, and whether the contract described the mechanism clearly enough to constitute informed consent.</p>
+                    </div>
+                </div>
+
+                <!-- SHARE -->
+                <div class="share-bar">
+                    <span>Share</span>
+                    <a class="share-btn" target="_blank" rel="noopener" aria-label="Share on WhatsApp" href="https://wa.me/?text=The%20Mistake%20of%20Letting%20the%20Bank%20Sweep%20Third-Party%20Payments%20From%20Your%20Account%3A%20https%3A%2F%2Fspositol.github.io%2Fblog%2Fpix-de-terceiros-sweep%2Fen%2F"><i class="fab fa-whatsapp"></i></a>
+                    <a class="share-btn" target="_blank" rel="noopener" aria-label="Share on LinkedIn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fspositol.github.io%2Fblog%2Fpix-de-terceiros-sweep%2Fen%2F"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="share-btn" aria-label="Copy link" href="https://spositol.github.io/blog/pix-de-terceiros-sweep/en/" onclick="navigator.clipboard.writeText(this.href); alert('Link copied!'); return false;"><i class="fas fa-link"></i></a>
+                </div>
+
+                <!-- AUTHOR -->
+                <div class="author-box">
+                    <img src="../../../img/dr-lincoln-sposito.jpg" alt="Dr. Lincoln Sposito">
+                    <div>
+                        <h4>Dr. Lincoln Sposito</h4>
+                        <span class="author-role">PhD in Business Administration | Judicial Expert Witness | Data Science (MIT)</span>
+                        <p>Specialist in banking audits and financial forensics, combining the statistical rigor of data science with the analysis of banking-system architectures to dismantle predatory charges against SMEs. <a href="../../../index.html#autoridade" class="text-gold" style="font-weight:600;">Learn more about the expert →</a></p>
+                    </div>
+                </div>
+
+            </article>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="article-final-cta">
+        <div class="container">
+            <h2>Request a Forensic Diagnosis of Your Contract</h2>
+            <p>Before signing — or after — audit your Brazil-linked business credit contract with scientific forensic methodology.</p>
+            <div class="final-cta-buttons">
+                <a href="https://wa.me/5511914612603?text=I%20came%20from%20the%20third-party-payment-sweep%20article%20and%20want%20to%20talk%20to%20the%20expert." class="btn btn-danger" target="_blank" onclick="gtag('event', 'click_whatsapp', {'event_category': 'Lead', 'event_label': 'EN Article Pix Sweep - Final CTA'});"><i class="fab fa-whatsapp"></i> Talk to the Expert Now</a>
+                <a href="../../../us-cross-border/index.html#contact" class="btn btn-outline-light" style="border-color: #fff; color: #fff;"><i class="fas fa-file-signature"></i> Full Contact Form</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dr. Lincoln Sposito — Judicial Expert Witness & Financial Forensics. All rights reserved.</p>
+            <p>Technical and scientific compliance in all engagements. This site is informational and strictly professional in nature.</p>
+            <p style="margin-top: 15px; font-size: 0.8rem;">
+                Institutional Repository & Case Portal:
+                <a href="https://spositol.github.io/pericia.judicial/index.html" target="_blank" rel="noopener">Sposito Perícia Judicial</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/5511914612603?text=Hello%20Dr.%20Lincoln,%20I%20would%20like%20to%20discuss%20a%20forensic%20audit%20for%20my%20company."
+       class="whatsapp-float btn btn-danger"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Talk to Dr. Lincoln on WhatsApp"
+       onclick="gtag('event', 'click_whatsapp', {'event_category': 'Lead', 'event_label': 'EN Article Pix Sweep - Float'});">
+    <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>

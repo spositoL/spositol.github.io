@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+	<!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5F1FGJ25TK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5F1FGJ25TK');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quando a Própria Planilha do Banco Não Fecha: o "Saldo Fantasma" em Crédito PJ | Dr. Lincoln Sposito</title>
+    <meta name="description" content="Em cerca de um quarto dos casos periciados, o modelo de amortização do banco contém erro estrutural que faz o saldo devedor não zerar mesmo com parcelas pagas em dia.">
+    <link rel="canonical" href="https://spositol.github.io/blog/planilha-do-banco-nao-fecha/">
+
+    <!-- Hreflang: versões do mesmo artigo -->
+    <link rel="alternate" hreflang="pt-BR" href="https://spositol.github.io/blog/planilha-do-banco-nao-fecha/">
+    <link rel="alternate" hreflang="en" href="https://spositol.github.io/blog/planilha-do-banco-nao-fecha/en/">
+    <link rel="alternate" hreflang="es" href="https://spositol.github.io/blog/planilha-do-banco-nao-fecha/es/">
+    <link rel="alternate" hreflang="x-default" href="https://spositol.github.io/blog/planilha-do-banco-nao-fecha/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../img/apple-touch-icon.png">
+
+    <!-- Open Graph / Twitter Card -->
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Dr. Lincoln Sposito - Perícia Judicial">
+    <meta property="og:url" content="https://spositol.github.io/blog/planilha-do-banco-nao-fecha/">
+    <meta property="og:title" content="Quando a Própria Planilha do Banco Não Fecha: o &quot;Saldo Fantasma&quot; em Crédito PJ">
+    <meta property="og:description" content="Em cerca de um quarto dos casos periciados, o modelo de amortização do banco contém erro estrutural que faz o saldo devedor não zerar mesmo com parcelas pagas em dia.">
+    <meta property="og:image" content="https://spositol.github.io/img/dr-lincoln-sposito.jpg">
+    <meta property="article:published_time" content="2026-09-14">
+    <meta property="article:modified_time" content="2026-09-14">
+    <meta property="article:author" content="Lincoln Sposito">
+    <meta property="article:section" content="Perícia Bancária">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Quando a Própria Planilha do Banco Não Fecha: o &quot;Saldo Fantasma&quot; em Crédito PJ">
+    <meta name="twitter:description" content="Em cerca de um quarto dos casos periciados, o modelo de amortização do banco não zera o saldo devedor mesmo com parcelas pagas em dia.">
+    <meta name="twitter:image" content="https://spositol.github.io/img/dr-lincoln-sposito.jpg">
+
+    <!-- JSON-LD: Breadcrumb + Article + FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://spositol.github.io/" },
+            { "@type": "ListItem", "position": 2, "name": "Artigos", "item": "https://spositol.github.io/#artigos" },
+            { "@type": "ListItem", "position": 3, "name": "Quando a Planilha do Banco Não Fecha", "item": "https://spositol.github.io/blog/planilha-do-banco-nao-fecha/" }
+          ]
+        },
+        {
+          "@type": "Article",
+          "@id": "https://spositol.github.io/blog/planilha-do-banco-nao-fecha/#article",
+          "headline": "Quando a Própria Planilha do Banco Não Fecha: o \"Saldo Fantasma\" em Crédito PJ",
+          "description": "Em cerca de um quarto dos casos periciados, o modelo de amortização do banco contém erro estrutural que faz o saldo devedor não zerar mesmo com parcelas pagas em dia.",
+          "image": "https://spositol.github.io/img/dr-lincoln-sposito.jpg",
+          "author": { "@type": "Person", "name": "Lincoln Sposito", "url": "https://spositol.github.io/#person", "jobTitle": "Perito Financeiro" },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Dr. Lincoln Sposito - Perícia Judicial",
+            "logo": { "@type": "ImageObject", "url": "https://spositol.github.io/img/LogoLS.png" }
+          },
+          "datePublished": "2026-09-14",
+          "dateModified": "2026-09-14",
+          "mainEntityOfPage": "https://spositol.github.io/blog/planilha-do-banco-nao-fecha/",
+          "inLanguage": "pt-BR",
+          "articleSection": "Perícia Bancária",
+          "keywords": "saldo fantasma, planilha de amortização, Tabela Price, SAC, erro estrutural, perícia bancária, crédito PME, liquidez do título"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "O que é o \"saldo fantasma\" em um contrato de crédito?",
+              "acceptedAnswer": { "@type": "Answer", "text": "É o resíduo de saldo devedor que aparece ao final do contrato mesmo depois de todas as parcelas terem sido pagas integralmente e em dia — um valor que, matematicamente, não deveria existir se o modelo de amortização estivesse corretamente construído." }
+            },
+            {
+              "@type": "Question",
+              "name": "Como um erro de cálculo desse tamanho passa despercebido pelo próprio banco?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Porque grandes instituições usam sistemas de amortização padronizados: uma vez que os parâmetros de entrada estão errados, o sistema produz um fluxo de saída consistente internamente, mas divorciado da realidade contratual — o erro não aparece porque todas as células da planilha do banco 'batem' entre si." }
+            },
+            {
+              "@type": "Question",
+              "name": "Um saldo que não fecha matematicamente pode embasar uma execução judicial?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Não sem ressalvas. Um título de crédito só é exequível se representar dívida líquida, certa e exigível. Um saldo resultante de erro estrutural no próprio modelo do credor não atende ao requisito de liquidez, porque decorre de um cálculo que, refeito corretamente, produz um número diferente." }
+            },
+            {
+              "@type": "Question",
+              "name": "O que fazer se minha empresa está sendo cobrada por um saldo que não bate?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Peça a planilha de amortização completa, parcela a parcela, com todos os parâmetros utilizados. Verifique, com apoio técnico, se o saldo devedor projetado zera ao final do prazo assumindo pagamento integral. Se não zera, há um problema estrutural que precede qualquer discussão sobre abusividade de taxa." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-darker: #020617;
+            --bg-light: #f8fafc;
+            --accent-gold: #c5a059;
+            --accent-gold-hover: #b38e46;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --text-light: #f8fafc;
+            --border-color: #e2e8f0;
+            --danger-color: #dc2626;
+            --warning-color: #d97706;
+            --success-color: #16a34a;
+            --font-title: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 30px -10px rgba(0, 0, 0, 0.2);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); color: var(--text-dark); background-color: #ffffff; line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: var(--font-title); line-height: 1.2; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-gold { color: var(--accent-gold); }
+
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; font-weight: 600; font-size: 0.95rem; border-radius: 6px; cursor: pointer; border: none; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn-gold { background-color: var(--accent-gold); color: #ffffff; }
+        .btn-gold:hover { background-color: var(--accent-gold-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .btn-outline-light { border: 2px solid var(--accent-gold); color: var(--accent-gold); background: transparent; }
+        .btn-outline-light:hover { background-color: var(--accent-gold); color: #ffffff; }
+        .btn-danger { background-color: var(--danger-color); color: white; }
+        .btn-danger:hover { background-color: #b91c1c; transform: translateY(-2px); }
+
+        header { background-color: var(--bg-primary); border-bottom: 1px solid rgba(197, 160, 89, 0.2); position: sticky; top: 0; z-index: 1000; padding: 12px 0; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .logo-container img { height: 60px; width: auto; display: block; }
+        nav ul { display: flex; list-style: none; gap: 16px; align-items: center; }
+        nav a { color: var(--text-light); font-size: 0.82rem; font-weight: 500; }
+        nav a:hover { color: var(--accent-gold); }
+        .lang-selector { display: flex; gap: 8px; font-size: 0.8rem; background: var(--bg-secondary); padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.3); }
+        .lang-selector a { color: #94a3b8; font-weight: 600; }
+        .lang-selector a.active { color: var(--accent-gold); }
+
+        .breadcrumb { font-size: 0.8rem; color: #94a3b8; margin-bottom: 18px; }
+        .breadcrumb a { color: #94a3b8; }
+        .breadcrumb a:hover { color: var(--accent-gold); }
+        .breadcrumb .sep { margin: 0 8px; color: #475569; }
+
+        .article-hero { background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%); color: white; padding: 50px 0 60px; position: relative; overflow: hidden; }
+        .article-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 15% 20%, rgba(197, 160, 89, 0.15), transparent 60%); }
+        .article-hero .container { position: relative; z-index: 2; }
+        .badge-hero { display: inline-block; background: rgba(197, 160, 89, 0.15); color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 6px 16px; border-radius: 30px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px; }
+        .article-hero h1 { font-size: 2.3rem; font-weight: 700; margin-bottom: 20px; color: #ffffff; max-width: 880px; }
+        .article-meta { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; color: #94a3b8; font-size: 0.88rem; }
+        .article-meta .meta-author { display: flex; align-items: center; gap: 10px; }
+        .article-meta img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-gold); }
+        .article-meta strong { color: #e2e8f0; }
+
+        .article-wrap { padding: 60px 0 30px; }
+        .article-content { max-width: 760px; margin: 0 auto; }
+        .lead { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.7; }
+        .article-content h2 { font-size: 1.55rem; color: var(--bg-primary); margin: 46px 0 18px; padding-bottom: 10px; border-bottom: 2px solid var(--border-color); position: relative; }
+        .article-content h2::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 60px; height: 2px; background: var(--accent-gold); }
+        .article-content p { color: #334155; margin-bottom: 18px; font-size: 1.02rem; line-height: 1.78; }
+        .article-content strong { color: var(--bg-primary); }
+        .article-content em { color: var(--text-muted); }
+
+        .toc-box { background: var(--bg-light); border: 1px solid var(--border-color); border-left: 4px solid var(--accent-gold); border-radius: 8px; padding: 22px 26px; margin-bottom: 38px; }
+        .toc-box h4 { font-family: var(--font-body); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--accent-gold); margin-bottom: 12px; font-weight: 700; }
+        .toc-box ol { padding-left: 20px; }
+        .toc-box li { margin-bottom: 8px; font-size: 0.92rem; }
+        .toc-box a { color: var(--text-dark); font-weight: 500; }
+        .toc-box a:hover { color: var(--accent-gold); }
+
+        .table-wrap { overflow-x: auto; margin: 24px 0 12px; border-radius: 8px; box-shadow: var(--shadow-sm); }
+        .data-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+        .data-table th { background: var(--bg-primary); color: var(--accent-gold); text-align: left; padding: 12px 16px; font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-dark); }
+        .data-table tr:nth-child(even) td { background: #f8fafc; }
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .callout { background: linear-gradient(135deg, rgba(197,160,89,0.08), rgba(197,160,89,0.02)); border: 1px solid rgba(197,160,89,0.35); border-left: 5px solid var(--accent-gold); border-radius: 8px; padding: 22px 26px; margin: 20px 0 32px; font-size: 1.02rem; color: var(--text-dark); }
+        .callout strong { color: var(--bg-primary); }
+
+        .finding-list { display: flex; flex-direction: column; gap: 16px; margin: 22px 0 32px; }
+        .finding-item { background: #fff; border: 1px solid var(--border-color); border-radius: 8px; padding: 20px 24px; display: flex; gap: 16px; align-items: flex-start; transition: all 0.25s ease; }
+        .finding-item:hover { border-color: var(--accent-gold); box-shadow: var(--shadow-sm); }
+        .finding-item i { color: var(--accent-gold); font-size: 1.3rem; margin-top: 3px; flex-shrink: 0; }
+        .finding-item p { margin-bottom: 0; }
+
+        .mid-cta { background: var(--bg-primary); color: #fff; border-radius: 12px; padding: 32px 30px; margin: 40px 0; border: 1px solid rgba(197, 160, 89, 0.3); display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .mid-cta h4 { color: #fff; font-size: 1.2rem; margin-bottom: 6px; }
+        .mid-cta p { color: #94a3b8; margin-bottom: 0; font-size: 0.9rem; }
+
+        .practical-list { list-style: none; margin: 20px 0 32px; }
+        .practical-list li { display: flex; gap: 12px; margin-bottom: 14px; font-size: 0.98rem; color: var(--text-dark); align-items: flex-start; }
+        .practical-list i { color: var(--success-color); margin-top: 4px; flex-shrink: 0; }
+
+        .disclaimer-note { font-size: 0.85rem; color: var(--text-muted); font-style: italic; border-top: 1px solid var(--border-color); padding-top: 20px; margin-top: 36px; }
+
+        .faq-section { margin-top: 54px; }
+        .faq-section > h2 { font-size: 1.55rem; color: var(--bg-primary); margin-bottom: 22px; }
+        .faq-item { border: 1px solid var(--border-color); border-radius: 8px; padding: 20px 24px; margin-bottom: 14px; }
+        .faq-item h3 { font-family: var(--font-body); font-size: 1.02rem; color: var(--bg-primary); margin-bottom: 8px; display: flex; gap: 10px; align-items: flex-start; font-weight: 700; }
+        .faq-item h3 i { color: var(--accent-gold); margin-top: 4px; flex-shrink: 0; }
+        .faq-item p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 0; padding-left: 26px; }
+
+        .share-bar { display: flex; gap: 12px; align-items: center; margin: 44px 0; padding: 22px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); flex-wrap: wrap; }
+        .share-bar span { font-size: 0.82rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .share-btn { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-color); font-size: 1rem; }
+        .share-btn:hover { background: var(--accent-gold); color: #fff; border-color: var(--accent-gold); }
+
+        .author-box { display: flex; gap: 22px; align-items: center; background: var(--bg-light); border: 1px solid var(--border-color); border-radius: 12px; padding: 26px; margin-top: 8px; }
+        .author-box img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: top center; border: 2px solid var(--accent-gold); flex-shrink: 0; }
+        .author-box h4 { font-size: 1.1rem; color: var(--bg-primary); margin-bottom: 4px; }
+        .author-box .author-role { color: var(--accent-gold); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 8px; letter-spacing: 0.4px; }
+        .author-box p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0; }
+
+        .article-final-cta { background: var(--bg-primary); color: #fff; padding: 70px 0; text-align: center; margin-top: 10px; }
+        .article-final-cta h2 { color: #fff; font-size: 2rem; margin-bottom: 16px; }
+        .article-final-cta p { color: #94a3b8; max-width: 620px; margin: 0 auto 32px; font-size: 1.02rem; }
+        .final-cta-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+        footer { background-color: #090d16; color: #64748b; padding: 40px 0 20px; border-top: 1px solid #1e293b; font-size: 0.85rem; text-align: center; }
+        footer p { margin-bottom: 10px; }
+        footer a { color: var(--accent-gold); }
+        .whatsapp-float { position: fixed; bottom: 24px; right: 24px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: var(--shadow-lg); z-index: 9999; transition: transform 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        @media (max-width: 992px) {
+            .article-hero h1 { font-size: 1.9rem; }
+        }
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .article-hero h1 { font-size: 1.6rem; }
+            .mid-cta, .author-box { flex-direction: column; text-align: center; }
+            .author-box img { margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER & NAVBAR -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="../../index.html" class="logo-container">
+                <picture>
+                    <source srcset="../../img/LogoLS.webp" type="image/webp">
+                    <img src="../../img/LogoLS.png" alt="Dr. Lincoln Sposito - Perícia Judicial e Assistência Técnica" width="123" height="60">
+                </picture>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="../../index.html#severidade">Diagnóstico BR</a></li>
+                    <li><a href="../../index.html#crossborder">US Market</a></li>
+                    <li><a href="../../index.html#latam">América Latina</a></li>
+                    <li><a href="../../index.html#global">Global / Arbitragem</a></li>
+                    <li><a href="../../index.html#artigos">Artigos</a></li>
+                    <li><a href="../../index.html#autoridade">O Perito</a></li>
+                </ul>
+            </nav>
+
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <div class="lang-selector" role="navigation" aria-label="Selecionar idioma do artigo">
+                    <a href="index.html" class="active" title="Português (Brasil)">PT</a>
+                    <span>|</span>
+                    <a href="en/index.html" title="English">EN</a>
+                    <span>|</span>
+                    <a href="es/index.html" title="Español">ES</a>
+                </div>
+                <a href="../../index.html#contato" class="btn btn-gold" style="padding: 10px 18px; font-size: 0.8rem;">Falar com Perito</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO DO ARTIGO -->
+    <section class="article-hero">
+        <div class="container">
+            <p class="breadcrumb">
+                <a href="../../index.html">Início</a><span class="sep">/</span><a href="../../index.html#artigos">Artigos</a><span class="sep">/</span>Saldo Fantasma
+            </p>
+            <span class="badge-hero">Série: Patologias em Crédito PME</span>
+            <h1>Quando a Própria Planilha do Banco Não Fecha: o "Saldo Fantasma" em Crédito PJ</h1>
+            <div class="article-meta">
+                <div class="meta-author">
+                    <img src="../../img/dr-lincoln-sposito.jpg" alt="Dr. Lincoln Sposito">
+                    <span>Por <strong>Dr. Lincoln Sposito</strong>, Perito Financeiro</span>
+                </div>
+                <span><i class="far fa-calendar"></i> 14 de setembro de 2026</span>
+                <span><i class="far fa-clock"></i> 7 min de leitura</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORPO DO ARTIGO -->
+    <section class="article-wrap">
+        <div class="container">
+            <article class="article-content">
+
+                <p class="lead">Boa parte da discussão sobre abusividade em crédito bancário gira em torno de teses jurídicas: o que é justo, o que é abusivo, o que fere o Código de Defesa do Consumidor. Mas há uma categoria de problema que antecede qualquer debate jurídico, porque é anterior a ele: o erro estrutural no próprio modelo de cálculo. Não é uma questão de "a taxa é alta demais" — é uma questão de "a conta não fecha, nem pelos critérios do próprio banco".</p>
+
+                <p>Em perícias técnicas sobre operações de crédito PJ, esse tipo de vício aparece com uma frequência que surpreende: em cerca de um quarto da amostra de casos revisados, o modelo de amortização apresentado pela instituição financeira contém um erro estrutural que faz o saldo devedor "sobrar" — mesmo depois de todas as parcelas pagas integralmente e em dia, o sistema do banco aponta um resíduo que, matematicamente, não deveria existir.</p>
+
+                <div class="toc-box">
+                    <h4><i class="fas fa-list-ul"></i> Nesta análise</h4>
+                    <ol>
+                        <li><a href="#saldo-fantasma">O que é o "saldo fantasma"</a></li>
+                        <li><a href="#despercebido">Como um erro estrutural passa despercebido</a></li>
+                        <li><a href="#importa">Por que isso importa para quem está devendo</a></li>
+                        <li><a href="#o-que-fazer">O que fazer diante de uma cobrança que não bate</a></li>
+                        <li><a href="#faq">Perguntas frequentes</a></li>
+                    </ol>
+                </div>
+
+                <h2 id="saldo-fantasma">O que é o "saldo fantasma"</h2>
+                <p>Uma operação de crédito bem construída — seja pela Tabela Price, seja pelo Sistema de Amortização Constante (SAC) — tem uma propriedade elementar: se todas as parcelas previstas forem pagas nos valores e nas datas contratadas, o saldo devedor zera ao final do prazo. Essa é a própria definição matemática de amortização. Não é uma cortesia do credor; é uma consequência inevitável da fórmula.</p>
+
+                <p>Quando isso não acontece — quando o cliente paga rigorosamente o que foi cobrado, mês a mês, e ao final do contrato o banco ainda apresenta um saldo remanescente de dezenas ou centenas de milhares de reais — o problema não está no devedor. Está no modelo.</p>
+
+                <div class="finding-list">
+                    <div class="finding-item">
+                        <i class="fas fa-landmark"></i>
+                        <p><strong>Caso 1 — Conta Garantida convertida em CCB de renegociação (Banco do Brasil).</strong> Limite original de aproximadamente R$ 900 mil, consolidado depois em torno de R$ 924,5 mil. Ao final do prazo contratual de 96 meses, o próprio fluxo apresentado pelo banco projetava um custo total de cerca de R$ 2,55 milhões — mas com um resíduo fictício de aproximadamente R$ 209,8 mil que simplesmente não se explicava pelo fluxo de pagamentos informado.</p>
+                    </div>
+                    <div class="finding-item">
+                        <i class="fas fa-calculator"></i>
+                        <p><strong>Caso 2 — CCB vinculada a programa de fomento (FGI-PEAC).</strong> Com um banco de grande porte, o mesmo padrão se repetiu em escala menor: mesmo com pagamento integral das parcelas conforme cobradas, o algoritmo de amortização do credor não zerava o saldo ao final — o que a perícia chamou, no parecer técnico, de "saldo fantasma".</p>
+                    </div>
+                </div>
+
+                <div class="callout">
+                    No Caso 1, a perícia refez o cálculo com os parâmetros contratuais corretamente aplicados e chegou a um custo total revisado de cerca de <strong>R$ 1,97 milhão — uma diferença de aproximadamente R$ 582 mil</strong> em relação ao valor originalmente projetado pelo banco.
+                </div>
+
+                <h2 id="despercebido">Como um erro estrutural passa despercebido</h2>
+                <p>A pergunta óbvia é: como um erro desse tamanho passa despercebido, inclusive pelo próprio banco que o cometeu? A resposta tem a ver com a forma como esses modelos são operacionalizados. Grandes instituições financeiras não calculam cada contrato "na mão" — usam sistemas de amortização padronizados, alimentados por parâmetros (taxa, prazo, carência, indexador, encargos acessórios) que, uma vez errados na entrada, produzem um fluxo de saída consistente internamente, mas divorciado da realidade contratual.</p>
+
+                <p>Isso significa que o erro não é percebido porque o sistema "fecha" — do ponto de vista do próprio banco, todas as células da planilha batem entre si. O problema é que a planilha inteira foi construída sobre uma premissa equivocada: um encargo acessório capitalizado que não deveria compor a base de cálculo, uma carência tratada como "amortização" quando na verdade só acumula juros, ou um indexador aplicado de forma incompatível com o SAC ou a Price contratados.</p>
+
+                <p>Esse tipo de vício raramente é intencional no sentido de fraude deliberada. É, mais frequentemente, um sintoma de automação sem auditoria — sistemas de cálculo bancário que replicam, contrato após contrato, o mesmo erro de configuração, sem que ninguém, do lado do credor, pare para verificar se o resultado final faz sentido matemático.</p>
+
+                <div class="mid-cta">
+                    <div>
+                        <h4>O saldo cobrado pelo banco não bate com o que você pagou?</h4>
+                        <p>Solicite a reconstituição técnica da planilha de amortização do seu contrato.</p>
+                    </div>
+                    <a href="https://wa.me/5511914612603?text=Vim%20do%20artigo%20sobre%20saldo%20fantasma%20e%20quero%20uma%20reconstitui%C3%A7%C3%A3o%20t%C3%A9cnica%20do%20meu%20contrato." class="btn btn-gold" target="_blank" onclick="gtag('event', 'click_whatsapp', {'event_category': 'Lead', 'event_label': 'Artigo Planilha Nao Fecha - CTA Meio'});"><i class="fab fa-whatsapp"></i> Solicitar Reconstituição</a>
+                </div>
+
+                <h2 id="importa">Por que isso importa para quem está devendo</h2>
+                <p>Para o empresário que está sendo cobrado por um saldo que "não fecha", a implicação prática é significativa. Do ponto de vista técnico, um título de crédito só é exequível — só pode embasar uma execução judicial — se representar uma dívida líquida, certa e exigível. Um saldo que resulta de erro estrutural no próprio modelo do credor não atende ao requisito de liquidez: ele não é "certo", porque decorre de um cálculo que, quando refeito corretamente, produz um número diferente — às vezes dramaticamente diferente.</p>
+
+                <p>Isso não significa que o devedor nada deve. Significa que o valor cobrado precisa ser recalculado a partir de premissas corretas antes de qualquer cobrança ou execução ser considerada válida. Na prática pericial, essa recomposição costuma revelar diferenças expressivas — nos casos citados, entre 20% e mais de 40% do valor originalmente apresentado pelo banco.</p>
+
+                <h2 id="o-que-fazer">O que fazer diante de uma cobrança que não bate</h2>
+                <p>Se sua empresa está sendo cobrada por um saldo residual mesmo depois de honrar rigorosamente as parcelas do contrato, siga estes passos antes de aceitar a cobrança como definitiva:</p>
+
+                <ul class="practical-list">
+                    <li><i class="fas fa-check-circle"></i> Peça a planilha de amortização completa, parcela a parcela, com todos os parâmetros utilizados (taxa efetiva, indexador, base de cálculo dos encargos, tratamento da carência).</li>
+                    <li><i class="fas fa-check-circle"></i> Verifique, com apoio técnico, se o saldo devedor projetado zera ao final do prazo assumindo pagamento integral.</li>
+                    <li><i class="fas fa-check-circle"></i> Se não zera, há um problema estrutural que precede qualquer discussão sobre abusividade de taxa — e que pode ser mais fácil de demonstrar em juízo do que uma tese de revisão de cláusula, porque não depende de interpretação: depende apenas de refazer a conta.</li>
+                </ul>
+
+                <p class="disclaimer-note">Este artigo integra uma série sobre patologias técnicas em operações de crédito empresarial, com base em pareceres periciais elaborados pelo autor. Casos individuais são tratados de forma agregada e anonimizada, sem identificação de empresas ou pessoas físicas envolvidas.</p>
+
+                <!-- FAQ -->
+                <div class="faq-section" id="faq">
+                    <h2>Perguntas frequentes</h2>
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> O que é o "saldo fantasma" em um contrato de crédito?</h3>
+                        <p>É o resíduo de saldo devedor que aparece ao final do contrato mesmo depois de todas as parcelas terem sido pagas integralmente e em dia — um valor que, matematicamente, não deveria existir se o modelo de amortização estivesse corretamente construído.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> Como um erro de cálculo desse tamanho passa despercebido pelo próprio banco?</h3>
+                        <p>Porque grandes instituições usam sistemas de amortização padronizados: uma vez que os parâmetros de entrada estão errados, o sistema produz um fluxo de saída consistente internamente, mas divorciado da realidade contratual — o erro não aparece porque todas as células da planilha do banco "batem" entre si.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> Um saldo que não fecha matematicamente pode embasar uma execução judicial?</h3>
+                        <p>Não sem ressalvas. Um título de crédito só é exequível se representar dívida líquida, certa e exigível. Um saldo resultante de erro estrutural no próprio modelo do credor não atende ao requisito de liquidez, porque decorre de um cálculo que, refeito corretamente, produz um número diferente.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> O que fazer se minha empresa está sendo cobrada por um saldo que não bate?</h3>
+                        <p>Peça a planilha de amortização completa, parcela a parcela, com todos os parâmetros utilizados. Verifique, com apoio técnico, se o saldo devedor projetado zera ao final do prazo assumindo pagamento integral. Se não zera, há um problema estrutural que precede qualquer discussão sobre abusividade de taxa.</p>
+                    </div>
+                </div>
+
+                <!-- COMPARTILHAR -->
+                <div class="share-bar">
+                    <span>Compartilhar</span>
+                    <a class="share-btn" target="_blank" rel="noopener" aria-label="Compartilhar no WhatsApp" href="https://wa.me/?text=Quando%20a%20Pr%C3%B3pria%20Planilha%20do%20Banco%20N%C3%A3o%20Fecha%3A%20https%3A%2F%2Fspositol.github.io%2Fblog%2Fplanilha-do-banco-nao-fecha%2F"><i class="fab fa-whatsapp"></i></a>
+                    <a class="share-btn" target="_blank" rel="noopener" aria-label="Compartilhar no LinkedIn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fspositol.github.io%2Fblog%2Fplanilha-do-banco-nao-fecha%2F"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="share-btn" aria-label="Copiar link" href="https://spositol.github.io/blog/planilha-do-banco-nao-fecha/" onclick="navigator.clipboard.writeText(this.href); alert('Link copiado!'); return false;"><i class="fas fa-link"></i></a>
+                </div>
+
+                <!-- AUTOR -->
+                <div class="author-box">
+                    <img src="../../img/dr-lincoln-sposito.jpg" alt="Dr. Lincoln Sposito">
+                    <div>
+                        <h4>Dr. Lincoln Sposito</h4>
+                        <span class="author-role">Doutor em Administração | Perito Judicial | Data Science (MIT)</span>
+                        <p>Especialista em auditoria bancária e perícia financeira, une o rigor estatístico da Ciência de Dados com a análise de arquiteturas de sistemas bancários para desarmar cobranças predatórias contra PMEs. <a href="../../index.html#autoridade" class="text-gold" style="font-weight:600;">Conheça o perito →</a></p>
+                    </div>
+                </div>
+
+            </article>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="article-final-cta">
+        <div class="container">
+            <h2>Solicite um Diagnóstico Pericial do Seu Contrato</h2>
+            <p>Antes de assinar — ou depois de assinado — audite seu contrato de crédito empresarial com metodologia pericial científica.</p>
+            <div class="final-cta-buttons">
+                <a href="https://wa.me/5511914612603?text=Vim%20do%20artigo%20sobre%20saldo%20fantasma%20e%20quero%20falar%20com%20o%20perito." class="btn btn-danger" target="_blank" onclick="gtag('event', 'click_whatsapp', {'event_category': 'Lead', 'event_label': 'Artigo Planilha Nao Fecha - CTA Final'});"><i class="fab fa-whatsapp"></i> Falar com o Perito Agora</a>
+                <a href="../../index.html#contato" class="btn btn-outline-light" style="border-color: #fff; color: #fff;"><i class="fas fa-file-signature"></i> Formulário Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dr. Lincoln Sposito — Perícia Judicial e Assistência Técnica. Todos os direitos reservados.</p>
+            <p>Atuação em conformidade técnica e científica. Este site possui caráter informativo e estritamente profissional.</p>
+            <p style="margin-top: 15px; font-size: 0.8rem;">
+                Repositório Institucional & Portal de Casos:
+                <a href="https://spositol.github.io/pericia.judicial/index.html" target="_blank" rel="noopener">Sposito Perícia Judicial</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/5511914612603?text=Ol%C3%A1%20Dr.%20Lincoln,%20gostaria%20de%20falar%20sobre%20uma%20per%C3%ADcia%20para%20minha%20empresa."
+       class="whatsapp-float btn btn-danger"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Falar com Dr. Lincoln no WhatsApp"
+       onclick="gtag('event', 'click_whatsapp', {'event_category': 'Lead', 'event_label': 'Artigo Planilha Nao Fecha - Float'});">
+    <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+	<!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5F1FGJ25TK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5F1FGJ25TK');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When the Error Is in the Decimal Point: an IOF Miscalculation Can Undermine Default Claims | Dr. Lincoln Sposito</title>
+    <meta name="description" content="A gross-up error in Brazil's IOF tax calculation produced a disclosed CET lower than the nominal rate itself — an inconsistency that can undermine the legal basis for default claims.">
+    <link rel="canonical" href="https://spositol.github.io/blog/erro-casa-decimal/en/">
+
+    <!-- Hreflang: article versions -->
+    <link rel="alternate" hreflang="pt-BR" href="https://spositol.github.io/blog/erro-casa-decimal/">
+    <link rel="alternate" hreflang="en" href="https://spositol.github.io/blog/erro-casa-decimal/en/">
+    <link rel="alternate" hreflang="es" href="https://spositol.github.io/blog/erro-casa-decimal/es/">
+    <link rel="alternate" hreflang="x-default" href="https://spositol.github.io/blog/erro-casa-decimal/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../img/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../img/apple-touch-icon.png">
+
+    <!-- Open Graph / Twitter Card -->
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Dr. Lincoln Sposito - Financial Forensics">
+    <meta property="og:url" content="https://spositol.github.io/blog/erro-casa-decimal/en/">
+    <meta property="og:title" content="When the Error Is in the Decimal Point: an IOF Miscalculation Can Undermine Default Claims">
+    <meta property="og:description" content="A gross-up error in Brazil's IOF tax calculation produced a disclosed CET lower than the nominal rate — a mathematical impossibility that can undermine default claims.">
+    <meta property="og:image" content="https://spositol.github.io/img/dr-lincoln-sposito.jpg">
+    <meta property="article:published_time" content="2026-09-14">
+    <meta property="article:modified_time" content="2026-09-14">
+    <meta property="article:author" content="Lincoln Sposito">
+    <meta property="article:section" content="Banking Forensics">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="When the Error Is in the Decimal Point: an IOF Miscalculation Can Undermine Default Claims">
+    <meta name="twitter:description" content="A rounding error in Brazil's IOF tax calculation can reveal an inconsistent CET and undermine default claims.">
+    <meta name="twitter:image" content="https://spositol.github.io/img/dr-lincoln-sposito.jpg">
+
+    <!-- JSON-LD: Breadcrumb + Article + FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://spositol.github.io/us-cross-border/" },
+            { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://spositol.github.io/#artigos" },
+            { "@type": "ListItem", "position": 3, "name": "When the Error Is in the Decimal Point", "item": "https://spositol.github.io/blog/erro-casa-decimal/en/" }
+          ]
+        },
+        {
+          "@type": "Article",
+          "@id": "https://spositol.github.io/blog/erro-casa-decimal/en/#article",
+          "headline": "When the Error Is in the Decimal Point: an IOF Miscalculation Can Undermine Default Claims",
+          "description": "A gross-up error in Brazil's IOF tax calculation produced a disclosed CET lower than the nominal rate itself — an inconsistency that can undermine the legal basis for default claims.",
+          "image": "https://spositol.github.io/img/dr-lincoln-sposito.jpg",
+          "author": { "@type": "Person", "name": "Lincoln Sposito", "url": "https://spositol.github.io/#person", "jobTitle": "Financial Expert Witness" },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Dr. Lincoln Sposito - Financial Forensics",
+            "logo": { "@type": "ImageObject", "url": "https://spositol.github.io/img/LogoLS.png" }
+          },
+          "datePublished": "2026-09-14",
+          "dateModified": "2026-09-14",
+          "mainEntityOfPage": "https://spositol.github.io/blog/erro-casa-decimal/en/",
+          "inLanguage": "en",
+          "articleSection": "Banking Forensics",
+          "keywords": "IOF gross-up, CET, default claim, liquid and certain debt, Brazilian civil procedure, forensic audit, CCB"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the IOF 'gross-up' and where can it fail?",
+              "acceptedAnswer": { "@type": "Answer", "text": "It's the reverse calculation required when a bank finances the IOF tax into the loan principal: figuring out what gross amount, once the proportional tax is deducted, results exactly in the net amount the client should receive. It is sensitive to rounding errors and inconsistencies in day-count conventions." }
+            },
+            {
+              "@type": "Question",
+              "name": "Why is a CET lower than the nominal rate a mathematical impossibility?",
+              "acceptedAnswer": { "@type": "Answer", "text": "By regulatory definition (CMN Resolution 3,517/2007), the CET is the nominal rate plus all other charges: IOF tax, fees, insurance, registration costs. It can only equal the nominal rate in the theoretical case of an operation with zero additional charges — never fall below it." }
+            },
+            {
+              "@type": "Question",
+              "name": "How can an IOF error undermine a contract's default claim?",
+              "acceptedAnswer": { "@type": "Answer", "text": "A contract can only support a default claim, protest or enforcement action if the debt amount is liquid and certain, ascertainable by simple arithmetic (Brazilian Civil Procedure Code, articles 783 and 803, I). When the tax calculation base is incorrect and the CET diverges from what is mathematically possible, there is a legitimate dispute over the true outstanding balance." }
+            },
+            {
+              "@type": "Question",
+              "name": "What should a business owner do before signing a CCB with financed IOF?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Ask the bank for the day-by-day tax calculation spreadsheet, and check whether the disclosed CET is mathematically consistent with the informed nominal rate — it should never be lower than it." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-primary: #0f172a; --bg-secondary: #1e293b; --bg-darker: #020617; --bg-light: #f8fafc;
+            --accent-gold: #c5a059; --accent-gold-hover: #b38e46; --text-dark: #0f172a; --text-muted: #475569;
+            --text-light: #f8fafc; --border-color: #e2e8f0; --danger-color: #dc2626; --warning-color: #d97706;
+            --success-color: #16a34a; --font-title: 'Playfair Display', Georgia, serif; --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06); --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.1); --shadow-lg: 0 20px 30px -10px rgba(0, 0, 0, 0.2);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); color: var(--text-dark); background-color: #ffffff; line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: var(--font-title); line-height: 1.2; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-gold { color: var(--accent-gold); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; font-weight: 600; font-size: 0.95rem; border-radius: 6px; cursor: pointer; border: none; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn-gold { background-color: var(--accent-gold); color: #ffffff; }
+        .btn-gold:hover { background-color: var(--accent-gold-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .btn-outline-light { border: 2px solid var(--accent-gold); color: var(--accent-gold); background: transparent; }
+        .btn-outline-light:hover { background-color: var(--accent-gold); color: #ffffff; }
+        .btn-danger { background-color: var(--danger-color); color: white; }
+        .btn-danger:hover { background-color: #b91c1c; transform: translateY(-2px); }
+        header { background-color: var(--bg-primary); border-bottom: 1px solid rgba(197, 160, 89, 0.2); position: sticky; top: 0; z-index: 1000; padding: 12px 0; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .logo-container img { height: 60px; width: auto; display: block; }
+        nav ul { display: flex; list-style: none; gap: 16px; align-items: center; }
+        nav a { color: var(--text-light); font-size: 0.82rem; font-weight: 500; }
+        nav a:hover { color: var(--accent-gold); }
+        .lang-selector { display: flex; gap: 8px; font-size: 0.8rem; background: var(--bg-secondary); padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.3); }
+        .lang-selector a { color: #94a3b8; font-weight: 600; }
+        .lang-selector a.active { color: var(--accent-gold); }
+        .breadcrumb { font-size: 0.8rem; color: #94a3b8; margin-bottom: 18px; }
+        .breadcrumb a { color: #94a3b8; }
+        .breadcrumb a:hover { color: var(--accent-gold); }
+        .breadcrumb .sep { margin: 0 8px; color: #475569; }
+        .article-hero { background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%); color: white; padding: 50px 0 60px; position: relative; overflow: hidden; }
+        .article-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 15% 20%, rgba(197, 160, 89, 0.15), transparent 60%); }
+        .article-hero .container { position: relative; z-index: 2; }
+        .badge-hero { display: inline-block; background: rgba(197, 160, 89, 0.15); color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 6px 16px; border-radius: 30px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px; }
+        .article-hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 20px; color: #ffffff; max-width: 880px; }
+        .article-meta { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; color: #94a3b8; font-size: 0.88rem; }
+        .article-meta .meta-author { display: flex; align-items: center; gap: 10px; }
+        .article-meta img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-gold); }
+        .article-meta strong { color: #e2e8f0; }
+        .article-wrap { padding: 60px 0 30px; }
+        .article-content { max-width: 760px; margin: 0 auto; }
+        .lead { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.7; }
+        .article-content h2 { font-size: 1.5rem; color: var(--bg-primary); margin: 46px 0 18px; padding-bottom: 10px; border-bottom: 2px solid var(--border-color); position: relative; }
+        .article-content h2::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 60px; height: 2px; background: var(--accent-gold); }
+        .article-content p { color: #334155; margin-bottom: 18px; font-size: 1.02rem; line-height: 1.78; }
+        .article-content strong { color: var(--bg-primary); }
+        .article-content em { color: var(--text-muted); }
+        .toc-box { background: var(--bg-light); border: 1px solid var(--border-color); border-left: 4px solid var(--accent-gold); border-radius: 8px; padding: 22px 26px; margin-bottom: 38px; }
+        .toc-box h4 { font-family: var(--font-body); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--accent-gold); margin-bottom: 12px; font-weight: 700; }
+        .toc-box ol { padding-left: 20px; }
+        .toc-box li { margin-bottom: 8px; font-size: 0.92rem; }
+        .toc-box a { color: var(--text-dark); font-weight: 500; }
+        .toc-box a:hover { color: var(--accent-gold); }
+        .table-wrap { overflow-x: auto; margin: 24px 0 12px; border-radius: 8px; box-shadow: var(--shadow-sm); }
+        .data-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+        .data-table th { background: var(--bg-primary); color: var(--accent-gold); text-align: left; padding: 12px 16px; font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-dark); }
+        .data-table tr:nth-child(even) td { background: #f8fafc; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .callout { background: linear-gradient(135deg, rgba(197,160,89,0.08), rgba(197,160,89,0.02)); border: 1px solid rgba(197,160,89,0.35); border-left: 5px solid var(--accent-gold); border-radius: 8px; padding: 22px 26px; margin: 20px 0 32px; font-size: 1.02rem; color: var(--text-dark); }
+        .callout strong { color: var(--bg-primary); }
+        .finding-list { display: flex; flex-direction: column; gap: 16px; margin: 22px 0 32px; }
+        .finding-item { background: #fff; border: 1px solid var(--border-color); border-radius: 8px; padding: 20px 24px; display: flex; gap: 16px; align-items: flex-start; transition: all 0.25s ease; }
+        .finding-item:hover { border-color: var(--accent-gold); box-shadow: var(--shadow-sm); }
+        .finding-item i { color: var(--accent-gold); font-size: 1.3rem; margin-top: 3px; flex-shrink: 0; }
+        .finding-item p { margin-bottom: 0; }
+        .mid-cta { background: var(--bg-primary); color: #fff; border-radius: 12px; padding: 32px 30px; margin: 40px 0; border: 1px solid rgba(197, 160, 89, 0.3); display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .mid-cta h4 { color: #fff; font-size: 1.2rem; margin-bottom: 6px; }
+        .mid-cta p { color: #94a3b8; margin-bottom: 0; font-size: 0.9rem; }
+        .practical-list { list-style: none; margin: 20px 0 32px; }
+        .practical-list li { display: flex; gap: 12px; margin-bottom: 14px; font-size: 0.98rem; color: var(--text-dark); align-items: flex-start; }
+        .practical-list i { color: var(--success-color); margin-top: 4px; flex-shrink: 0; }
+        .disclaimer-note { font-size: 0.85rem; color: var(--text-muted); font-style: italic; border-top: 1px solid var(--border-color); padding-top: 20px; margin-top: 36px; }
+        .faq-section { margin-top: 54px; }
+        .faq-section > h2 { font-size: 1.5rem; color: var(--bg-primary); margin-bottom: 22px; }
+        .faq-item { border: 1px solid var(--border-color); border-radius: 8px; padding: 20px 24px; margin-bottom: 14px; }
+        .faq-item h3 { font-family: var(--font-body); font-size: 1.02rem; color: var(--bg-primary); margin-bottom: 8px; display: flex; gap: 10px; align-items: flex-start; font-weight: 700; }
+        .faq-item h3 i { color: var(--accent-gold); margin-top: 4px; flex-shrink: 0; }
+        .faq-item p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 0; padding-left: 26px; }
+        .share-bar { display: flex; gap: 12px; align-items: center; margin: 44px 0; padding: 22px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); flex-wrap: wrap; }
+        .share-bar span { font-size: 0.82rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .share-btn { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-color); font-size: 1rem; }
+        .share-btn:hover { background: var(--accent-gold); color: #fff; border-color: var(--accent-gold); }
+        .author-box { display: flex; gap: 22px; align-items: center; background: var(--bg-light); border: 1px solid var(--border-color); border-radius: 12px; padding: 26px; margin-top: 8px; }
+        .author-box img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: top center; border: 2px solid var(--accent-gold); flex-shrink: 0; }
+        .author-box h4 { font-size: 1.1rem; color: var(--bg-primary); margin-bottom: 4px; }
+        .author-box .author-role { color: var(--accent-gold); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 8px; letter-spacing: 0.4px; }
+        .author-box p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0; }
+        .article-final-cta { background: var(--bg-primary); color: #fff; padding: 70px 0; text-align: center; margin-top: 10px; }
+        .article-final-cta h2 { color: #fff; font-size: 2rem; margin-bottom: 16px; }
+        .article-final-cta p { color: #94a3b8; max-width: 620px; margin: 0 auto 32px; font-size: 1.02rem; }
+        .final-cta-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+        footer { background-color: #090d16; color: #64748b; padding: 40px 0 20px; border-top: 1px solid #1e293b; font-size: 0.85rem; text-align: center; }
+        footer p { margin-bottom: 10px; }
+        footer a { color: var(--accent-gold); }
+        .whatsapp-float { position: fixed; bottom: 24px; right: 24px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: var(--shadow-lg); z-index: 9999; transition: transform 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        @media (max-width: 992px) { .article-hero h1 { font-size: 1.85rem; } }
+        @media (max-width: 768px) { nav ul { display: none; } .article-hero h1 { font-size: 1.55rem; } .mid-cta, .author-box { flex-direction: column; text-align: center; } .author-box img { margin: 0 auto; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="../../../us-cross-border/index.html" class="logo-container">
+                <picture>
+                    <source srcset="../../../img/LogoLS.webp" type="image/webp">
+                    <img src="../../../img/LogoLS.png" alt="Dr. Lincoln Sposito - Judicial Expert & Technical Assistant" width="123" height="60">
+                </picture>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="../../../us-cross-border/index.html#fx-trade">FX & Trade</a></li>
+                    <li><a href="../../../us-cross-border/index.html#authority">Expert Witness</a></li>
+                    <li><a href="../../../index.html#artigos">Articles</a></li>
+                </ul>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <div class="lang-selector" role="navigation" aria-label="Select article language">
+                    <a href="../index.html" title="Português (Brasil)">PT</a>
+                    <span>|</span>
+                    <a href="index.html" class="active" title="English">EN</a>
+                    <span>|</span>
+                    <a href="../es/index.html" title="Español">ES</a>
+                </div>
+                <a href="../../../us-cross-border/index.html#contact" class="btn btn-gold" style="padding: 10px 18px; font-size: 0.8rem;">Talk to the Expert</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="article-hero">
+        <div class="container">
+            <p class="breadcrumb">
+                <a href="../../../us-cross-border/index.html">Home</a><span class="sep">/</span><a href="../../../index.html#artigos">Articles</a><span class="sep">/</span>Error in the Decimal Point
+            </p>
+            <span class="badge-hero">Series: Pathologies in SME Credit</span>
+            <h1>When the Error Is in the Decimal Point: an IOF Miscalculation Can Undermine Default Claims</h1>
+            <div class="article-meta">
+                <div class="meta-author">
+                    <img src="../../../img/dr-lincoln-sposito.jpg" alt="Dr. Lincoln Sposito">
+                    <span>By <strong>Dr. Lincoln Sposito</strong>, Financial Expert Witness</span>
+                </div>
+                <span><i class="far fa-calendar"></i> September 14, 2026</span>
+                <span><i class="far fa-clock"></i> 7 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="article-wrap">
+        <div class="container">
+            <article class="article-content">
+
+                <p class="lead">There is a widespread belief — even among experienced lawyers and business owners — that Brazil's IOF tax is a fixed figure, automatically calculated by the bank's system, immune to error. One case I reviewed in recent months, involving a CCB secured by real estate of significant value (~R$1.79 million gross, ~R$1.73 million net), contradicts that belief in a textbook way: a miscalculation in the financed IOF — the so-called "gross-up" — not only changed the amount owed, but produced a regulatory inconsistency that, technically, can undermine the legal characterization of default itself.</p>
+
+                <p>The case is not isolated. In roughly 9 of the 20 business credit operations I recently analyzed — all CCBs, revolving credit lines or commercial notes from Brazilian SMEs — the IOF calculation or treatment showed a relevant error or opacity. This article uses one of these cases, treated in aggregate and anonymized form, to explain why this tax "detail" deserves heightened attention from any business owner before signing a credit contract.</p>
+
+                <div class="toc-box">
+                    <h4><i class="fas fa-list-ul"></i> In this analysis</h4>
+                    <ol>
+                        <li><a href="#gross-up">What the IOF "gross-up" is — and where it can fail</a></li>
+                        <li><a href="#sintoma">The most revealing symptom: CET below the nominal rate</a></li>
+                        <li><a href="#mora">Why this can undermine default claims</a></li>
+                        <li><a href="#o-que-fazer">What a business owner should do</a></li>
+                        <li><a href="#faq">Frequently asked questions</a></li>
+                    </ol>
+                </div>
+
+                <h2 id="gross-up">What the IOF "gross-up" is — and where it can fail</h2>
+                <p>When the IOF applies to a credit operation and the bank decides to finance it — that is, embed the tax amount within the borrowed principal itself, rather than charging it upfront — the calculation stops being a simple rate applied to the disbursed amount. It requires a reverse calculation (gross-up): figuring out what gross amount, once the proportional IOF is deducted, results exactly in the net amount the client should receive.</p>
+                <p>This calculation is sensitive to rounding errors, confusion between the daily calculation base and the fixed additional rate, and inconsistencies between the number of running days considered in the contract and the number actually used by the bank's system. In the case analyzed here, the forensic review identified exactly this kind of deviation in the financed IOF calculation — an error that, in isolation, might seem irrelevant against the operation's total value, but that carries a much more serious side effect: it becomes the seed of <strong>tax-driven compounding</strong>.</p>
+
+                <h2 id="sintoma">The most revealing symptom: when the CET is lower than the nominal rate</h2>
+                <p>More serious than the cents-level error itself was what the forensic review found when comparing two numbers that, by definition, could never invert: the disclosed Total Effective Cost (CET) and the contracted nominal interest rate.</p>
+
+                <div class="callout">
+                    In the case analyzed, the disclosed CET (~18.84% per year) came in <strong>lower</strong> than the nominal rate itself (~19.64% per year) — a mathematical impossibility. By regulatory definition (CMN Resolution 3,517/2007), the CET is the nominal rate plus all other charges: IOF tax, fees, insurance, registration costs. It can equal the nominal rate only in the theoretical case of an operation with zero additional charges — never fall below it. When the disclosed CET is lower than the interest rate itself, that indicates, at minimum, that the IOF was not correctly incorporated into the calculation presented to the client.
+                </div>
+
+                <p>This pattern is not exclusive to this case: it reappears, with variations, in other operations from the sample I analyzed, including ones involving floating SELIC-indexed rates and publicly-backed credit programs. It is a recurring "symptom" that the bank simulated the total cost of credit incompletely at the time of contracting — which has a direct legal consequence, in light of the duty of clear and adequate disclosure set out in the Consumer Protection Code (applied by analogy to business credit relationships in several precedents), and CMN Resolution 3,517/2007 itself.</p>
+
+                <div class="mid-cta">
+                    <div>
+                        <h4>Is the CET on your contract mathematically consistent?</h4>
+                        <p>Request a technical screening comparing the disclosed CET against the nominal rate and the IOF calculation.</p>
+                    </div>
+                    <a href="https://wa.me/5511914612603?text=I%20came%20from%20the%20decimal%20point%20IOF%20article%20and%20want%20a%20technical%20screening%20of%20my%20contract." class="btn btn-gold" target="_blank" onclick="gtag('event', 'click_whatsapp', {'event_category': 'Lead', 'event_label': 'EN Article Casa Decimal - Mid CTA'});"><i class="fab fa-whatsapp"></i> Request Screening</a>
+                </div>
+
+                <h2 id="mora">Why this can undermine default claims</h2>
+                <p>A credit contract can only support a default claim, protest or enforcement action if the debt amount is liquid and certain — that is, if it can be ascertained by simple arithmetic, with no need for new evidence production (Brazilian Civil Procedure Code, articles 783 and 803, I). When the very calculation base of the tax embedded in the contract is incorrect, and the CET disclosed to the client diverges from what is mathematically possible, the amount charged stops being "certain" in the technical-legal sense of the term: there is a legitimate dispute over the operation's true outstanding balance.</p>
+                <p>This does not mean the debt ceases to exist — it means default charges on the specific disputed amount lose one of their conditions of validity until the correct calculation is established. In forensic practice, it is common that, once the IOF error is corrected and the operation's real CET recalculated (in the case handled here, the recalculated real CET came in near 21.60% per year), the outstanding balance changes enough to justify judicial review of the default charges applied to the difference.</p>
+
+                <h2 id="o-que-fazer">What a business owner should do</h2>
+                <ul class="practical-list">
+                    <li><i class="fas fa-check-circle"></i> Ask the bank for the day-by-day IOF calculation spreadsheet.</li>
+                    <li><i class="fas fa-check-circle"></i> Check whether the disclosed CET is mathematically consistent with the informed nominal rate — it should never be lower.</li>
+                    <li><i class="fas fa-check-circle"></i> If the operation is already underway and this inconsistency appears on the statement or contract, seek an independent technical audit.</li>
+                </ul>
+                <p>An error of a few reais at the decimal-point level of the IOF can, over the life of the contract, translate into a difference of tens or hundreds of thousands of reais — and can be the thread that, once pulled, reveals the entire calculation structure of the operation.</p>
+
+                <p class="disclaimer-note">This article is part of a series on technical pathologies in business credit operations, based on expert opinions prepared by the author. Individual cases are treated in aggregate and anonymized form, with no identification of the companies or individuals involved.</p>
+
+                <div class="faq-section" id="faq">
+                    <h2>Frequently asked questions</h2>
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> What is the IOF "gross-up" and where can it fail?</h3>
+                        <p>It's the reverse calculation required when a bank finances the IOF tax into the loan principal: figuring out what gross amount, once the proportional tax is deducted, results exactly in the net amount the client should receive. It is sensitive to rounding errors and inconsistencies in day-count conventions.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> Why is a CET lower than the nominal rate a mathematical impossibility?</h3>
+                        <p>By regulatory definition (CMN Resolution 3,517/2007), the CET is the nominal rate plus all other charges: IOF tax, fees, insurance, registration costs. It can only equal the nominal rate in the theoretical case of an operation with zero additional charges — never fall below it.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> How can an IOF error undermine a contract's default claim?</h3>
+                        <p>A contract can only support a default claim, protest or enforcement action if the debt amount is liquid and certain, ascertainable by simple arithmetic (Brazilian Civil Procedure Code, articles 783 and 803, I). When the tax calculation base is incorrect and the CET diverges from what is mathematically possible, there is a legitimate dispute over the true outstanding balance.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> What should a business owner do before signing a CCB with financed IOF?</h3>
+                        <p>Ask the bank for the day-by-day tax calculation spreadsheet, and check whether the disclosed CET is mathematically consistent with the informed nominal rate — it should never be lower than it.</p>
+                    </div>
+                </div>
+
+                <div class="share-bar">
+                    <span>Share</span>
+                    <a class="share-btn" target="_blank" rel="noopener" aria-label="Share on WhatsApp" href="https://wa.me/?text=When%20the%20Error%20Is%20in%20the%20Decimal%20Point%3A%20https%3A%2F%2Fspositol.github.io%2Fblog%2Ferro-casa-decimal%2Fen%2F"><i class="fab fa-whatsapp"></i></a>
+                    <a class="share-btn" target="_blank" rel="noopener" aria-label="Share on LinkedIn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fspositol.github.io%2Fblog%2Ferro-casa-decimal%2Fen%2F"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="share-btn" aria-label="Copy link" href="https://spositol.github.io/blog/erro-casa-decimal/en/" onclick="navigator.clipboard.writeText(this.href); alert('Link copied!'); return false;"><i class="fas fa-link"></i></a>
+                </div>
+
+                <div class="author-box">
+                    <img src="../../../img/dr-lincoln-sposito.jpg" alt="Dr. Lincoln Sposito">
+                    <div>
+                        <h4>Dr. Lincoln Sposito</h4>
+                        <span class="author-role">PhD in Business Administration | Judicial Expert Witness | Data Science (MIT)</span>
+                        <p>Specialist in banking audits and financial forensics, combining the statistical rigor of data science with the analysis of banking-system architectures to dismantle predatory charges against SMEs. <a href="../../../index.html#autoridade" class="text-gold" style="font-weight:600;">Learn more about the expert →</a></p>
+                    </div>
+                </div>
+
+            </article>
+        </div>
+    </section>
+
+    <section class="article-final-cta">
+        <div class="container">
+            <h2>Request a Forensic Diagnosis of Your Contract</h2>
+            <p>Before signing — or after — audit your Brazil-linked business credit contract with scientific forensic methodology.</p>
+            <div class="final-cta-buttons">
+                <a href="https://wa.me/5511914612603?text=I%20came%20from%20the%20decimal%20point%20IOF%20article%20and%20want%20to%20talk%20to%20the%20expert." class="btn btn-danger" target="_blank" onclick="gtag('event', 'click_whatsapp', {'event_category': 'Lead', 'event_label': 'EN Article Casa Decimal - Final CTA'});"><i class="fab fa-whatsapp"></i> Talk to the Expert Now</a>
+                <a href="../../../us-cross-border/index.html#contact" class="btn btn-outline-light" style="border-color: #fff; color: #fff;"><i class="fas fa-file-signature"></i> Full Contact Form</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dr. Lincoln Sposito — Judicial Expert Witness & Financial Forensics. All rights reserved.</p>
+            <p>Technical and scientific compliance in all engagements. This site is informational and strictly professional in nature.</p>
+            <p style="margin-top: 15px; font-size: 0.8rem;">
+                Institutional Repository & Case Portal:
+                <a href="https://spositol.github.io/pericia.judicial/index.html" target="_blank" rel="noopener">Sposito Perícia Judicial</a>
+            </p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511914612603?text=Hello%20Dr.%20Lincoln,%20I%20would%20like%20to%20discuss%20a%20forensic%20audit%20for%20my%20company."
+       class="whatsapp-float btn btn-danger"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Talk to Dr. Lincoln on WhatsApp"
+       onclick="gtag('event', 'click_whatsapp', {'event_category': 'Lead', 'event_label': 'EN Article Casa Decimal - Float'});">
+    <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>

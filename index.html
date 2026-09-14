@@ -204,19 +204,18 @@
         .flow-step h4 { font-size: 1rem; margin-bottom: 8px; color: var(--bg-primary); }
         .flow-step p { font-size: 0.82rem; color: var(--text-muted); }
 
-        /* --- ARTIGOS TÉCNICOS (CARD FLUTUANTE) --- */
+        /* --- ARTIGOS TÉCNICOS (GRID) --- */
         .articles-section { padding: 80px 0; background: var(--bg-light); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
-        .article-float-wrap { display: flex; justify-content: center; }
-        .article-float-card { background: #ffffff; border: 1px solid var(--border-color); border-radius: 14px; max-width: 480px; width: 100%; box-shadow: var(--shadow-md); overflow: hidden; position: relative; animation: floaty 4s ease-in-out infinite; transition: box-shadow 0.3s ease, transform 0.3s ease; }
-        .article-float-card:hover { box-shadow: var(--shadow-lg); animation-play-state: paused; transform: translateY(-10px); }
-        @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-        @media (prefers-reduced-motion: reduce) { .article-float-card { animation: none; } }
+        .article-float-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; }
+        .article-float-card { background: #ffffff; border: 1px solid var(--border-color); border-radius: 14px; width: 100%; box-shadow: var(--shadow-sm); overflow: hidden; position: relative; display: flex; flex-direction: column; transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease; }
+        .article-float-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-6px); border-color: var(--accent-gold); }
         .article-float-card .card-tag { position: absolute; top: 18px; left: 18px; background: var(--accent-gold); color: #fff; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 5px 12px; border-radius: 20px; z-index: 2; }
-        .article-float-card .card-body { padding: 56px 28px 30px; }
-        .article-float-card h3 { font-size: 1.35rem; color: var(--bg-primary); margin-bottom: 12px; }
-        .article-float-card p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 18px; }
-        .article-float-card .card-meta { display: flex; gap: 14px; font-size: 0.76rem; color: #94a3b8; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.3px; flex-wrap: wrap; }
-        .articles-more-note { text-align: center; color: var(--text-muted); font-size: 0.88rem; margin-top: 24px; }
+        .article-float-card .card-body { padding: 56px 28px 28px; display: flex; flex-direction: column; flex: 1; }
+        .article-float-card h3 { font-size: 1.2rem; color: var(--bg-primary); margin-bottom: 12px; line-height: 1.3; }
+        .article-float-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 18px; flex: 1; }
+        .article-float-card .card-meta { display: flex; gap: 14px; font-size: 0.74rem; color: #94a3b8; margin-bottom: 18px; text-transform: uppercase; letter-spacing: 0.3px; flex-wrap: wrap; }
+        .articles-more-note { text-align: center; color: var(--text-muted); font-size: 0.88rem; margin-top: 36px; }
+        .articles-more-note .btn { margin-top: 14px; }
 
         /* --- DIFERENCIAL TÉCNICO --- */
         .diff-section { padding: 90px 0; }
@@ -584,7 +583,7 @@
         </div>
     </section>
 
-    <!-- ARTIGOS TÉCNICOS (CARD FLUTUANTE) -->
+    <!-- ARTIGOS TÉCNICOS (GRID) -->
     <section id="artigos" class="articles-section">
         <div class="container">
             <div class="section-header">
@@ -594,7 +593,7 @@
 
             <div class="article-float-wrap">
                 <div class="article-float-card">
-                    <span class="card-tag"><i class="fas fa-star"></i> Novo</span>
+                    <span class="card-tag"><i class="fas fa-star"></i> Destaque</span>
                     <div class="card-body">
                         <div class="card-meta">
                             <span><i class="far fa-calendar"></i> 13 set 2026</span>
@@ -602,12 +601,80 @@
                             <span><i class="fas fa-language"></i> PT · EN · ES</span>
                         </div>
                         <h3>Ranking dos Bancos Mais Citados em Perícias de Abusividade PME</h3>
-                        <p>Levantamento de 20 perícias em CCB, conta garantida e nota comercial: quais instituições mais aparecem e os padrões contratuais que se repetem — e o que auditar antes de assinar.</p>
+                        <p>Levantamento de 20 perícias em CCB, conta garantida e nota comercial: quais instituições mais aparecem e os padrões contratuais que se repetem.</p>
                         <a href="blog/ranking-bancos-pericia-pme/index.html" class="btn btn-gold" style="width: 100%;"><i class="fas fa-book-open"></i> Ler Artigo Completo</a>
                     </div>
                 </div>
+                <div class="article-float-card">
+                    <span class="card-tag"><i class="fas fa-star"></i> Novo</span>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span><i class="far fa-calendar"></i> 14 set 2026</span>
+                            <span><i class="far fa-clock"></i> 6 min</span>
+                            <span><i class="fas fa-language"></i> PT · EN · ES</span>
+                        </div>
+                        <h3>Os 7 Erros que Toda PME Comete ao Contratar uma Operação de Crédito</h3>
+                        <p>Sete erros recorrentes em contratos de crédito empresarial — do CET mal calculado à sobreposição de garantias — identificados em dezenas de perícias.</p>
+                        <a href="blog/sete-erros-credito-pme/index.html" class="btn btn-gold" style="width: 100%;"><i class="fas fa-book-open"></i> Ler Artigo Completo</a>
+                    </div>
+                </div>
+                <div class="article-float-card">
+                    <span class="card-tag"><i class="fas fa-star"></i> Novo</span>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span><i class="far fa-calendar"></i> 14 set 2026</span>
+                            <span><i class="far fa-clock"></i> 5 min</span>
+                            <span><i class="fas fa-language"></i> PT · EN · ES</span>
+                        </div>
+                        <h3>Carência Não É Fôlego — É Onde a Dívida Mais Cresce</h3>
+                        <p>Em 17 de 20 perícias analisadas, o saldo devedor cresceu mais durante a carência do que em qualquer outro período do contrato.</p>
+                        <a href="blog/carencia-nao-e-folego/index.html" class="btn btn-gold" style="width: 100%;"><i class="fas fa-book-open"></i> Ler Artigo Completo</a>
+                    </div>
+                </div>
+                <div class="article-float-card">
+                    <span class="card-tag"><i class="fas fa-star"></i> Novo</span>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span><i class="far fa-calendar"></i> 14 set 2026</span>
+                            <span><i class="far fa-clock"></i> 5 min</span>
+                            <span><i class="fas fa-language"></i> PT · EN · ES</span>
+                        </div>
+                        <h3>O Erro de Deixar o Banco "Varrer" o PIX de Terceiros da Sua Conta</h3>
+                        <p>Como o algoritmo de varredura (sweep) bancário captura PIX e TED de terceiros antes que a empresa possa usá-los para pagar suas próprias contas.</p>
+                        <a href="blog/pix-de-terceiros-sweep/index.html" class="btn btn-gold" style="width: 100%;"><i class="fas fa-book-open"></i> Ler Artigo Completo</a>
+                    </div>
+                </div>
+                <div class="article-float-card">
+                    <span class="card-tag"><i class="fas fa-star"></i> Novo</span>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span><i class="far fa-calendar"></i> 14 set 2026</span>
+                            <span><i class="far fa-clock"></i> 7 min</span>
+                            <span><i class="fas fa-language"></i> PT · EN · ES</span>
+                        </div>
+                        <h3>FGI-PEAC: o Fundo Garante o Banco, mas Protege a PME?</h3>
+                        <p>Metade das perícias em crédito PJ envolve FGI-PEAC, PRONAMPE ou BNDES Automático — por que a mitigação de risco raramente chega ao preço cobrado da PME.</p>
+                        <a href="blog/fgi-peac-protege-pme/index.html" class="btn btn-gold" style="width: 100%;"><i class="fas fa-book-open"></i> Ler Artigo Completo</a>
+                    </div>
+                </div>
+                <div class="article-float-card">
+                    <span class="card-tag"><i class="fas fa-star"></i> Novo</span>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span><i class="far fa-calendar"></i> 14 set 2026</span>
+                            <span><i class="far fa-clock"></i> 8 min</span>
+                            <span><i class="fas fa-language"></i> PT · EN · ES</span>
+                        </div>
+                        <h3>Súmula 121, 60 Anos Depois: Por que o Anatocismo Ainda é a Patologia Mais Comum em Crédito PJ</h3>
+                        <p>Em 17 de 20 operações periciadas, alguma forma de capitalização indevida de juros — disfarçada de carência, gross-up de IOF e amortização negativa.</p>
+                        <a href="blog/sumula-121-30-anos/index.html" class="btn btn-gold" style="width: 100%;"><i class="fas fa-book-open"></i> Ler Artigo Completo</a>
+                    </div>
+                </div>
             </div>
-            <p class="articles-more-note">Novos artigos da série são publicados periodicamente.</p>
+            <p class="articles-more-note">
+                Já são 30 artigos técnicos publicados na série — padrões, erros recorrentes e checklists práticos extraídos de perícias reais.<br>
+                <a href="blog/index.html" class="btn btn-outline-light"><i class="fas fa-layer-group"></i> Ver Todos os 30 Artigos</a>
+            </p>
         </div>
     </section>
 
