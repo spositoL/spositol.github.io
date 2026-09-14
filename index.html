@@ -11,15 +11,68 @@
       gtag('js', new Date());
 
       gtag('config', 'G-5F1FGJ25TK');
-    </script>	
-	
+    </script>
+
 	<meta name="google-site-verification" content="Zy3TDt0cEXAX7Va43dRrd51OSSDlp4TqN8WvI3U9ZeQ" />
-	
-	
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Lincoln Sposito | Perícia Judicial, Finanças & Auditoria Bancária</title>
-    <meta name="description" content="Auditoria de sistemas bancários, perícia em contratos de crédito, FGI PEAC, financiamento de veículos, câmbio, suporte cross-border, assessoria Latam e Arbitragem Internacional (ICC/LCIA/SIAC).">
-    
+    <meta name="description" content="Perícia judicial e auditoria bancária para empresas: revisão de CCB, FGI PEAC e financiamento de veículos contra juros abusivos e busca e apreensão.">
+    <link rel="canonical" href="https://spositol.github.io/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+
+    <!-- Open Graph / Twitter Card -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Dr. Lincoln Sposito - Perícia Judicial">
+    <meta property="og:url" content="https://spositol.github.io/">
+    <meta property="og:title" content="Dr. Lincoln Sposito | Perícia Judicial, Finanças & Auditoria Bancária">
+    <meta property="og:description" content="Perícia judicial e auditoria bancária para empresas: revisão de CCB, FGI PEAC e financiamento de veículos contra juros abusivos e busca e apreensão.">
+    <meta property="og:image" content="https://spositol.github.io/img/dr-lincoln-sposito.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dr. Lincoln Sposito | Perícia Judicial, Finanças & Auditoria Bancária">
+    <meta name="twitter:description" content="Perícia judicial e auditoria bancária para empresas: revisão de CCB, FGI PEAC e financiamento de veículos contra juros abusivos e busca e apreensão.">
+    <meta name="twitter:image" content="https://spositol.github.io/img/dr-lincoln-sposito.jpg">
+
+    <!-- JSON-LD: Person + ProfessionalService -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://spositol.github.io/#person",
+          "name": "Lincoln Sposito",
+          "honorificPrefix": "Dr.",
+          "jobTitle": "Perito Judicial e Assistente Técnico",
+          "description": "Doutor em Administração, Perito Judicial e especialista em auditoria bancária, perícia financeira e ciência de dados (MIT).",
+          "image": "https://spositol.github.io/img/dr-lincoln-sposito.jpg",
+          "url": "https://spositol.github.io/",
+          "worksFor": { "@id": "https://spositol.github.io/#business" }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://spositol.github.io/#business",
+          "name": "Dr. Lincoln Sposito - Perícia Judicial e Auditoria Bancária",
+          "description": "Perícia judicial e assistência técnica em auditoria de sistemas bancários, contratos de crédito, financiamento de veículos, câmbio, operações cross-border e arbitragem internacional.",
+          "url": "https://spositol.github.io/",
+          "image": "https://spositol.github.io/img/dr-lincoln-sposito.jpg",
+          "telephone": "+5511914612603",
+          "founder": { "@id": "https://spositol.github.io/#person" },
+          "areaServed": ["BR", "US", "Latin America", "Europe", "Asia"],
+          "knowsLanguage": ["pt-BR", "en", "es"],
+          "serviceType": ["Perícia Judicial", "Auditoria Bancária", "Expert Witness", "Financial Forensics", "International Arbitration Support"]
+        }
+      ]
+    }
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -151,6 +204,20 @@
         .flow-step h4 { font-size: 1rem; margin-bottom: 8px; color: var(--bg-primary); }
         .flow-step p { font-size: 0.82rem; color: var(--text-muted); }
 
+        /* --- ARTIGOS TÉCNICOS (CARD FLUTUANTE) --- */
+        .articles-section { padding: 80px 0; background: var(--bg-light); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+        .article-float-wrap { display: flex; justify-content: center; }
+        .article-float-card { background: #ffffff; border: 1px solid var(--border-color); border-radius: 14px; max-width: 480px; width: 100%; box-shadow: var(--shadow-md); overflow: hidden; position: relative; animation: floaty 4s ease-in-out infinite; transition: box-shadow 0.3s ease, transform 0.3s ease; }
+        .article-float-card:hover { box-shadow: var(--shadow-lg); animation-play-state: paused; transform: translateY(-10px); }
+        @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        @media (prefers-reduced-motion: reduce) { .article-float-card { animation: none; } }
+        .article-float-card .card-tag { position: absolute; top: 18px; left: 18px; background: var(--accent-gold); color: #fff; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 5px 12px; border-radius: 20px; z-index: 2; }
+        .article-float-card .card-body { padding: 56px 28px 30px; }
+        .article-float-card h3 { font-size: 1.35rem; color: var(--bg-primary); margin-bottom: 12px; }
+        .article-float-card p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 18px; }
+        .article-float-card .card-meta { display: flex; gap: 14px; font-size: 0.76rem; color: #94a3b8; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.3px; flex-wrap: wrap; }
+        .articles-more-note { text-align: center; color: var(--text-muted); font-size: 0.88rem; margin-top: 24px; }
+
         /* --- DIFERENCIAL TÉCNICO --- */
         .diff-section { padding: 90px 0; }
         .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
@@ -174,7 +241,7 @@
         /* --- AUTORIDADE / DR LINCOLN --- */
         .author-section { padding: 90px 0; }
         .author-grid { display: grid; grid-template-columns: 300px 1fr; gap: 50px; align-items: center; }
-        .author-img-box img { width: 100%; border-radius: 12px; box-shadow: var(--shadow-md); border: 2px solid var(--accent-gold); }
+        .author-img-box img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: top center; border-radius: 12px; box-shadow: var(--shadow-md); border: 2px solid var(--accent-gold); }
         .author-info h3 { font-size: 2rem; color: var(--bg-primary); margin-bottom: 6px; }
         .author-title { color: var(--accent-gold); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; margin-bottom: 20px; display: block; }
         .author-info p { color: var(--text-muted); margin-bottom: 16px; font-size: 0.95rem; }
@@ -216,7 +283,7 @@
             <a href="index.html" class="logo-container">
                 <picture>
                     <source srcset="img/LogoLS.webp" type="image/webp">
-                    <img src="img/LogoLS.png" alt="Dr. Lincoln Sposito - Perícia Judicial e Assistência Técnica" width="220" height="60">
+                    <img src="img/LogoLS.png" alt="Dr. Lincoln Sposito - Perícia Judicial e Assistência Técnica" width="123" height="60">
                 </picture>
             </a>
             
@@ -227,17 +294,18 @@
                     <li><a href="#latam">América Latina</a></li>
                     <li><a href="#global">Global / Arbitragem</a></li>
                     <li><a href="#fluxo">Como Atuamos</a></li>
+                    <li><a href="#artigos">Artigos</a></li>
                     <li><a href="#autoridade">O Perito</a></li>
                 </ul>
             </nav>
 
             <div style="display: flex; align-items: center; gap: 16px;">
-                <div class="lang-selector">
-                    <a href="#" class="active">PT</a>
+                <div class="lang-selector" role="navigation" aria-label="Selecionar mercado / região">
+                    <a href="index.html" class="active" title="Brasil (Português)">BR</a>
                     <span>|</span>
-                    <a href="#">EN</a>
+                    <a href="us-cross-border/index.html" title="US & Cross-Border (English)">US/EN</a>
                     <span>|</span>
-                    <a href="#">ES</a>
+                    <a href="latam-advisory/index.html" title="América Latina (Español)">LATAM/ES</a>
                 </div>
                 <a href="#contato" class="btn btn-gold" style="padding: 10px 18px; font-size: 0.8rem;">Falar com Perito</a>
             </div>
@@ -342,7 +410,7 @@
         </div>
     </section>
 
-    <!-- ETAPA 2: EXPANSÃO EUA & CROSS-BORDER MARKET -->
+    <!-- ETAPA 2: EXPANSÃO EUA & CROSS-BORDER MARKET (TEASER — conteúdo completo em /us-cross-border/) -->
     <section id="crossborder" class="crossborder-section">
         <div class="container">
             <div class="section-header">
@@ -351,55 +419,38 @@
             </div>
 
             <div class="severity-grid">
-                <!-- PREVENTIVO (USA) -->
                 <div class="crossborder-card">
                     <div>
                         <span class="severity-tag" style="background: rgba(22, 163, 74, 0.2); color: #4ade80;">🟢 Preventive — FX & Trade</span>
                         <h3 style="color: #ffffff; margin-bottom: 12px; font-size: 1.35rem;">Opacidade em Câmbio (FX) & Trade Finance</h3>
-                        <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px;">Identificação de *Hidden Spreads* em remessas internacionais, opacidade em travamento de câmbio (*hedging*) e tarifas camufladas em contratos de comércio exterior.</p>
-                        <ul class="severity-list" style="margin-bottom: 30px;">
-                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> **FX Spread Audit & Tariff Compliance**</li>
-                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> Auditoria de Taxas Nominais vs. Efetivas</li>
-                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> Mapeamento de margens ocultas em corretoras</li>
-                        </ul>
+                        <p style="color: #94a3b8; font-size: 0.95rem;">Identificação de <em>hidden spreads</em> em remessas internacionais, opacidade em <em>hedging</em> e tarifas camufladas em contratos de comércio exterior.</p>
                     </div>
-                    <a href="#contato" class="btn btn-gold" style="width: 100%;">[ Schedule FX & Trade Audit ]</a>
                 </div>
 
-                <!-- MÉDIO / OPERACIONAL (USA) -->
                 <div class="crossborder-card">
                     <div>
                         <span class="severity-tag" style="background: rgba(217, 119, 6, 0.2); color: #fcd34d;">🟡 Operational — Payment Systems</span>
                         <h3 style="color: #ffffff; margin-bottom: 12px; font-size: 1.35rem;">Middleware & Gateways (Stripe, Adyen)</h3>
-                        <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px;">Controvérsias de retenção de fundos (*rolling reserves*), erros de liquidação (*settlement*) e falhas de conciliação API em adquirentes internacionais.</p>
-                        <ul class="severity-list" style="margin-bottom: 30px;">
-                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> **Payment System Log Forensics**</li>
-                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> Análise e Custeio Forense de Dados (ISO 27037)</li>
-                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> Prova de falhas sistêmicas na retenção de capital</li>
-                        </ul>
+                        <p style="color: #94a3b8; font-size: 0.95rem;">Controvérsias de <em>rolling reserves</em>, erros de <em>settlement</em> e falhas de conciliação API em adquirentes internacionais.</p>
                     </div>
-                    <a href="#contato" class="btn btn-gold" style="width: 100%;">[ Request Technical Log Audit ]</a>
                 </div>
 
-                <!-- GRAVE / LITÍGIO (USA) -->
                 <div class="crossborder-card" style="border-color: rgba(220, 38, 38, 0.5);">
                     <div>
                         <span class="severity-tag" style="background: rgba(220, 38, 38, 0.2); color: #fca5a5;">🔴 Litigation — Expert Witness</span>
                         <h3 style="color: #ffffff; margin-bottom: 12px; font-size: 1.35rem;">Cross-Border & Syndicated Loans</h3>
-                        <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px;">Processos de execução transfronteiriça, cobrança de garantias internacionais e disputas de crédito corporativo estruturado.</p>
-                        <ul class="severity-list" style="margin-bottom: 30px;">
-                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> **Cross-Border Expert Witness Report**</li>
-                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> Pareceres periciais para cortes americanas</li>
-                            <li style="color: #cbd5e1;"><i class="fas fa-check-circle text-gold"></i> Suporte em Câmaras de Arbitragem Internacional</li>
-                        </ul>
+                        <p style="color: #94a3b8; font-size: 0.95rem;">Execução transfronteiriça, cobrança de garantias internacionais e disputas de crédito corporativo estruturado.</p>
                     </div>
-                    <a href="https://wa.me/5511914612603?text=US/Cross-Border%20Expert%20Witness%20Inquiry." class="btn btn-danger" style="width: 100%;" target="_blank">[ Consult Expert Witness ]</a>
                 </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="us-cross-border/index.html" class="btn btn-gold"><i class="fas fa-arrow-right"></i> Full US & Cross-Border Advisory Page</a>
             </div>
         </div>
     </section>
 
-    <!-- ETAPA 3: EXPANSÃO AMÉRICA LATINA (LATAM MARKET) -->
+    <!-- ETAPA 3: EXPANSÃO AMÉRICA LATINA (LATAM MARKET — TEASER, conteúdo completo em /latam-advisory/) -->
     <section id="latam" class="latam-section">
         <div class="container">
             <div class="section-header">
@@ -408,50 +459,33 @@
             </div>
 
             <div class="severity-grid">
-                <!-- PREVENTIVO (LATAM) -->
                 <div class="latam-card">
                     <div>
                         <span class="severity-tag" style="background: #dcfce7; color: var(--success-color);">🟢 Preventivo — Multimoeda & Agro/Indústria</span>
                         <h3 style="color: var(--bg-primary); margin-bottom: 12px; font-size: 1.35rem;">Financiamento de Máquinas & Equipamentos</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Proteja o caixa da sua operação na América Latina contra distorções e indexadores abusivos em contratos de financiamento agrícola e industrial em moeda estrangeira (Dólar / Peso / Real).</p>
-                        <ul class="severity-list" style="margin-bottom: 30px;">
-                            <li><i class="fas fa-check-circle text-gold"></i> Recálculo de indexadores cambiais e taxas flutuantes</li>
-                            <li><i class="fas fa-check-circle text-gold"></i> Auditoria de Custo Efetivo em dólar e moedas locais</li>
-                            <li><i class="fas fa-check-circle text-gold"></i> Proteção de margem operacional agrícola/industrial</li>
-                        </ul>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Proteja o caixa contra indexadores abusivos em contratos de financiamento agrícola e industrial em moeda estrangeira (Dólar / Peso / Real).</p>
                     </div>
-                    <a href="#contato" class="btn btn-gold" style="width: 100%;">[ Auditar Contratos Multimoeda ]</a>
                 </div>
 
-                <!-- MÉDIO (LATAM) -->
                 <div class="latam-card">
                     <div>
                         <span class="severity-tag" style="background: #fef3c7; color: var(--warning-color);">🟡 Médio — Reestruturação Regional & Intercompany</span>
                         <h3 style="color: var(--bg-primary); margin-bottom: 12px; font-size: 1.35rem;">Conciliação de Filiais Latam & Passivos</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Unifique e audite o passivo bancário de suas filiais na América Latina com inteligência de dados única e expurgo de cobranças indevidas em serviços intercompany.</p>
-                        <ul class="severity-list" style="margin-bottom: 30px;">
-                            <li><i class="fas fa-check-circle text-gold"></i> Auditoria de passivos consolidados inter-filiais</li>
-                            <li><i class="fas fa-check-circle text-gold"></i> Expurgos de tarifas de serviços bancários cruzados</li>
-                            <li><i class="fas fa-check-circle text-gold"></i> Planejamento pericial para reorganização regional</li>
-                        </ul>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Auditoria do passivo bancário consolidado de filiais na América Latina e expurgo de cobranças indevidas intercompany.</p>
                     </div>
-                    <a href="#contato" class="btn btn-gold" style="width: 100%;">[ Auditar Passivo Regional Latam ]</a>
                 </div>
 
-                <!-- GRAVE (LATAM) -->
                 <div class="latam-card" style="border-top: 5px solid var(--danger-color);">
                     <div>
                         <span class="severity-tag" style="background: #fee2e2; color: var(--danger-color);">🔴 Grave — Proteção de Ativos & Exportação</span>
                         <h3 style="color: var(--bg-primary); margin-bottom: 12px; font-size: 1.35rem;">Garantias Internacionais & Hipotecas</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Suspensão emergencial de execuções de bens, hipotecas industriais e embargo de exportações na América Latina através de prova pericial de erro de cálculo e abusividade.</p>
-                        <ul class="severity-list" style="margin-bottom: 30px;">
-                            <li><i class="fas fa-check-circle text-gold"></i> Sustação de execuções de hipotecas industriais</li>
-                            <li><i class="fas fa-check-circle text-gold"></i> Defesa pericial contra embargos de exportação</li>
-                            <li><i class="fas fa-check-circle text-gold"></i> Impugnação de execução de garantias regionais</li>
-                        </ul>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Suspensão emergencial de execuções, hipotecas industriais e embargo de exportações na América Latina.</p>
                     </div>
-                    <a href="https://wa.me/5511914612603?text=Solicitação%20de%20Proteção%20Emergencial%20de%20Ativos%20na%20América%20Latina." class="btn btn-danger" style="width: 100%;" target="_blank">[ Proteção Emergencial Latam ]</a>
                 </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="latam-advisory/index.html" class="btn btn-gold"><i class="fas fa-arrow-right"></i> Página Completa Latam (Español)</a>
             </div>
         </div>
     </section>
@@ -466,71 +500,48 @@
             </div>
 
             <div class="severity-grid">
-                <!-- CARD 1: ARBITRAGEM INTERNACIONAL & EXPERT WITNESS -->
                 <div class="global-card">
                     <div>
                         <span class="severity-tag" style="background: rgba(197, 160, 89, 0.2); color: var(--accent-gold); border: 1px solid var(--accent-gold);">🏛️ High-Ticket Litigation</span>
                         <h3 style="color: #ffffff; margin-bottom: 8px; font-size: 1.35rem;">International Arbitration Expert Witness</h3>
-                        <p style="color: #cbd5e1; font-size: 0.92rem;">Atuação como Testemunha Técnica Especialista (*Expert Witness*) em litígios financeiros corporativos e arbitragens internacionais de grande porte.</p>
-                        
+                        <p style="color: #cbd5e1; font-size: 0.92rem;">Atuação como Testemunha Técnica Especialista (<em>Expert Witness</em>) em litígios financeiros corporativos e arbitragens internacionais de grande porte.</p>
                         <div class="chambers-list">
                             <span class="chamber-tag">ICC Paris</span>
                             <span class="chamber-tag">LCIA London</span>
                             <span class="chamber-tag">SIAC Singapore</span>
                         </div>
-
-                        <ul class="severity-list" style="margin-bottom: 30px;">
-                            <li style="color: #e2e8f0;"><i class="fas fa-check-circle text-gold"></i> Parecer técnico pericial para tribunais arbitrais</li>
-                            <li style="color: #e2e8f0;"><i class="fas fa-check-circle text-gold"></i> Sustentação oral de provas algorítmicas</li>
-                            <li style="color: #e2e8f0;"><i class="fas fa-check-circle text-gold"></i> Modelagem matemática e perícia em TI combinadas</li>
-                        </ul>
                     </div>
-                    <a href="https://wa.me/5511914612603?text=High-Ticket%20Expert%20Witness%20Arbitration%20Inquiry." class="btn btn-gold" style="width: 100%;" target="_blank">[ Retain Expert Witness ]</a>
                 </div>
 
-                <!-- CARD 2: AUDITORIA DE ALGORITMOS FINANCEIROS GLOBAIS -->
                 <div class="global-card">
                     <div>
                         <span class="severity-tag" style="background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid #3b82f6;">⚙️ Systemic Forensics</span>
                         <h3 style="color: #ffffff; margin-bottom: 8px; font-size: 1.35rem;">Global Financial Algorithm & Middleware Audit</h3>
-                        <p style="color: #cbd5e1; font-size: 0.92rem;">Investigação forense de falhas de processamento em grande escala para multinacionais com operadoras e plataformas financeiras na Europa e Ásia.</p>
-
+                        <p style="color: #cbd5e1; font-size: 0.92rem;">Investigação forense de falhas de processamento em grande escala para multinacionais com plataformas financeiras na Europa e Ásia.</p>
                         <div class="chambers-list">
                             <span class="chamber-tag">Data Science</span>
                             <span class="chamber-tag">Middleware API</span>
                             <span class="chamber-tag">ISO 27037</span>
                         </div>
-
-                        <ul class="severity-list" style="margin-bottom: 30px;">
-                            <li style="color: #e2e8f0;"><i class="fas fa-check-circle text-gold"></i> Engenharia reversa no código de liquidação financeira</li>
-                            <li style="color: #e2e8f0;"><i class="fas fa-check-circle text-gold"></i> Perícia técnica em falhas sistêmicas de cobrança</li>
-                            <li style="color: #e2e8f0;"><i class="fas fa-check-circle text-gold"></i> Rastreabilidade forense de metadados transacionais</li>
-                        </ul>
                     </div>
-                    <a href="#contato" class="btn btn-gold" style="width: 100%;">[ Request Global System Audit ]</a>
                 </div>
 
-                <!-- CARD 3: SUPPLY CHAIN FINANCE & BANCOS INTERNACIONAIS -->
                 <div class="global-card">
                     <div>
                         <span class="severity-tag" style="background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid #10b981;">🌐 Trade & Supply Chain</span>
                         <h3 style="color: #ffffff; margin-bottom: 8px; font-size: 1.35rem;">Supply Chain Finance & Banking Consortiums</h3>
-                        <p style="color: #cbd5e1; font-size: 0.92rem;">Auditoria de estruturas complexas de financiamento de cadeia de suprimentos e litígios envolvendo sindicatos bancários internacionais.</p>
-
+                        <p style="color: #cbd5e1; font-size: 0.92rem;">Auditoria de estruturas de financiamento de cadeia de suprimentos e litígios envolvendo sindicatos bancários internacionais.</p>
                         <div class="chambers-list">
                             <span class="chamber-tag">EMEA Market</span>
                             <span class="chamber-tag">APAC Market</span>
                             <span class="chamber-tag">Cross-Border</span>
                         </div>
-
-                        <ul class="severity-list" style="margin-bottom: 30px;">
-                            <li style="color: #e2e8f0;"><i class="fas fa-check-circle text-gold"></i> Auditoria de clausulados e custos em SCF</li>
-                            <li style="color: #e2e8f0;"><i class="fas fa-check-circle text-gold"></i> Perícia em garantias de empréstimos sindicalizados</li>
-                            <li style="color: #e2e8f0;"><i class="fas fa-check-circle text-gold"></i> Mapeamento de discrepâncias operacionais globais</li>
-                        </ul>
                     </div>
-                    <a href="#contato" class="btn btn-gold" style="width: 100%;">[ Consult Supply Chain Advisory ]</a>
                 </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="global-arbitration/index.html" class="btn btn-gold"><i class="fas fa-arrow-right"></i> Full Global Arbitration & Banking Advisory Page</a>
             </div>
         </div>
     </section>
@@ -573,6 +584,33 @@
         </div>
     </section>
 
+    <!-- ARTIGOS TÉCNICOS (CARD FLUTUANTE) -->
+    <section id="artigos" class="articles-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Artigos Técnicos</h2>
+                <p>Inteligência aplicada extraída de laudos periciais reais: padrões, erros recorrentes e o que sua empresa deve auditar antes de assinar.</p>
+            </div>
+
+            <div class="article-float-wrap">
+                <div class="article-float-card">
+                    <span class="card-tag"><i class="fas fa-star"></i> Novo</span>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span><i class="far fa-calendar"></i> 13 set 2026</span>
+                            <span><i class="far fa-clock"></i> 6 min</span>
+                            <span><i class="fas fa-language"></i> PT · EN · ES</span>
+                        </div>
+                        <h3>Ranking dos Bancos Mais Citados em Perícias de Abusividade PME</h3>
+                        <p>Levantamento de 20 perícias em CCB, conta garantida e nota comercial: quais instituições mais aparecem e os padrões contratuais que se repetem — e o que auditar antes de assinar.</p>
+                        <a href="blog/ranking-bancos-pericia-pme/index.html" class="btn btn-gold" style="width: 100%;"><i class="fas fa-book-open"></i> Ler Artigo Completo</a>
+                    </div>
+                </div>
+            </div>
+            <p class="articles-more-note">Novos artigos da série são publicados periodicamente.</p>
+        </div>
+    </section>
+
     <!-- DIFERENCIAL TÉCNICO -->
     <section class="diff-section">
         <div class="container">
@@ -580,7 +618,7 @@
                 <div>
                     <span class="text-gold" style="font-weight: 700; text-transform: uppercase; font-size: 0.85rem;">Por Que Nossa Perícia Vence o Banco?</span>
                     <h2 style="font-size: 2.2rem; color: var(--bg-primary); margin: 12px 0 20px;">O Banco Não Erra no Excel; Ele Parametriza o Algoritmo Para Cobrar A Mais</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">Diferente da perícia contábil comum que apenas confere somas de tabelas prontas, nossa atuação analisa a **lógica de código e dados** por trás dos terminais bancários.</p>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Diferente da perícia contábil comum que apenas confere somas de tabelas prontas, nossa atuação analisa a <strong>lógica de código e dados</strong> por trás dos terminais bancários.</p>
                     <p style="color: var(--text-muted);">Mapeamos arredondamentos ocultos, seguros embutidos sem destaque de fluxo de caixa e divergências gritantes entre a taxa nominal acordada e o Custo Efetivo Total (CET) cobrado do empresário.</p>
                 </div>
                 <div class="diff-box">
@@ -656,7 +694,10 @@
         <div class="container">
             <div class="author-grid">
                 <div class="author-img-box">
-                    <img src="img/perito-judicial-administracao-lincoln-sposito.webp" alt="Dr. Lincoln Sposito, Perito Judicial e Doutor em Administração" onerror="this.src='https://via.placeholder.com/300x380?text=Dr.+Lincoln+Sposito'">
+                    <picture>
+                        <source srcset="img/dr-lincoln-sposito.webp" type="image/webp">
+                        <img src="img/dr-lincoln-sposito.jpg" alt="Dr. Lincoln Sposito, Perito Judicial e Doutor em Administração" width="640" height="896" loading="lazy">
+                    </picture>
                 </div>
                 <div class="author-info">
                     <h3>Dr. Lincoln Sposito</h3>
@@ -774,10 +815,18 @@
 		</div>
 	</footer>	
 
-    <!-- WHATSAPP FLUTUANTE (CONVERSÃO DIRETA) -->
+    <!-- WHATSAPP FLUTUANTE (CONVERSÃO DIRETA)
     <a href="https://wa.me/5511914612603?text=Olá%20Dr.%20Lincoln,%20gostaria%20de%20falar%20sobre%20uma%20perícia%20para%20minha%20empresa." class="whatsapp-float" target="_blank" aria-label="Falar com Dr. Lincoln no WhatsApp">
         <i class="fab fa-whatsapp"></i>
-    </a>
+    </a>-->
+	<a href="https://wa.me/5511914612603?text=Olá%20Dr.%20Lincoln,%20gostaria%20de%20falar%20sobre%20uma%20perícia%20para%20minha%20empresa." 
+	   class="whatsapp-float btn btn-danger" 
+	   target="_blank" 
+	   rel="noopener noreferrer"
+	   aria-label="Falar com Dr. Lincoln no WhatsApp"
+	   onclick="gtag('event', 'click_whatsapp', {'event_category': 'Lead', 'event_label': 'Socorro Emergencial'});">
+	<i class="fab fa-whatsapp"></i> 
+	</a>
 
 </body>
 </html>

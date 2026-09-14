@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://spositol.github.io/sitemap.xml
